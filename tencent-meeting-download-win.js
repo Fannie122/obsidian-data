@@ -1,0 +1,2 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[97786],{253581:function(n,_,u){(window.__NEXT_P=window.__NEXT_P||[]).push(["/download-win",function(){return u(391027)}])}},function(n){n.O(0,[82447,73869,53790,92888,49774,40179],function(){return n(n.s=253581)}),_N_E=n.O()}]);
+//# sourceMappingURL=download-win-2112d2ef3be987e3.js.map

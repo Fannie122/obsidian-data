@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>应急 AI 平台架构驾驶舱</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <div>
+          <p>客户方案驾驶舱</p>
+          <strong>应急 AI 平台架构</strong>
+        </div>
+      </div>
+      <nav class="segmented" aria-label="驾驶舱视图切换">
+        <button class="segment active" type="button" data-panel="cockpit">
+          <span class="segment-icon overview-icon" aria-hidden="true"></span>
+          总览
+        </button>
+        <button class="segment" type="button" data-panel="strategy-os">
+          <span class="segment-icon stack-icon" aria-hidden="true"></span>
+          战略OS
+        </button>
+        <button class="segment" type="button" data-panel="architecture">
+          <span class="segment-icon stack-icon" aria-hidden="true"></span>
+          五层架构
+        </button>
+        <button class="segment" type="button" data-panel="cycle">
+          <span class="segment-icon loop-icon" aria-hidden="true"></span>
+          双循环
+        </button>
+        <button class="segment" type="button" data-panel="resilience">
+          <span class="segment-icon gauge-icon" aria-hidden="true"></span>
+          韧性指数
+        </button>
+        <button class="segment" type="button" data-panel="roadmap">
+          <span class="segment-icon route-icon" aria-hidden="true"></span>
+          建设路径
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="panel active" id="cockpit">
+        <div class="cockpit-grid">
+          <article class="mission">
+            <p class="eyebrow">应急风险本体论 × 五层架构</p>
+            <h1>把“出事后响应”升级为“风险常态在场”</h1>
+            <p class="lead">
+              这个驾驶舱把白皮书里的建设逻辑压缩成一套客户可感知的演示界面：用本体统一风险世界，用双循环解释平台如何运转，用韧性指数说明平台为什么持续创造价值。
+            </p>
+            <div class="thesis">
+              <span>核心命题</span>
+              <strong>以前出事才花钱，现在不出事也值钱。</strong>
+            </div>
+            <div class="audience-switch" role="group" aria-label="客户视角">
+              <button class="audience active" type="button" data-audience="owner">主官视角</button>
+              <button class="audience" type="button" data-audience="builder">建设方视角</button>
+              <button class="audience" type="button" data-audience="reviewer">评审方视角</button>
+            </div>
+            <p class="audience-copy" id="audienceCopy">
+              看到的是投入价值：风险被提前看见、资源被提前部署、事件来时直接激活已有能力。
+            </p>
+          </article>
+
+          <aside class="situation">
+            <div class="situation-head">
+              <span>T 市脱敏演示</span>
+              <strong>本体化应急成熟度</strong>
+            </div>
+            <div class="kpi-grid">
+              <div class="kpi">
+                <span>范式阶段</span>
+                <strong>4</strong>
+                <p>传统 → 数字化 → 智慧化 → 本体化</p>
+              </div>
+              <div class="kpi">
+                <span>平台层级</span>
+                <strong>5</strong>
+                <p>L1 本体到 L5 响应，处置后回写</p>
+              </div>
+              <div class="kpi">
+                <span>运行闭环</span>
+                <strong>2</strong>
+                <p>常态环事前运转，应急环事后激活</p>
+              </div>
+              <div class="kpi">
+                <span>量化指标</span>
+                <strong>3</strong>
+                <p>颗粒度、漂移度、韧性数值</p>
+              </div>
+            </div>
+            <div class="status-strip">
+              <span></span>
+              建设侧方案：平台怎么建、能力怎么验、资产怎么沉淀
+            </div>
+          </aside>
+        </div>
+
+        <div class="signal-row">
+          <article class="signal-card">
+            <span class="signal-index">01</span>
+            <h2>问题</h2>
+            <p>传统系统把注意力集中在 L5 事件处置，平台价值只能在“发生了什么”之后被统计。</p>
+          </article>
+          <article class="signal-card">
+            <span class="signal-index">02</span>
+            <h2>方法</h2>
+            <p>用对象、关系、动作、时空建立风险本体，让监测、研判、预防、响应都落在同一语义底座上。</p>
+          </article>
+          <article class="signal-card">
+            <span class="signal-index">03</span>
+            <h2>方案</h2>
+            <p>五层架构承载平台建设，双循环范式承载运行机制，韧性指数承载价值表达。</p>
+          </article>
+          <article class="signal-card">
+            <span class="signal-index">04</span>
+            <h2>结果</h2>
+            <p>从“事件触发后从零组织响应”转向“事件触发后激活已有部署”。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel" id="strategy-os">
+        <div class="opc-shell">
+          <div class="opc-hero">
+            <div>
+              <p class="opc-kicker">OPC Strategic Dashboard Skill · 本地迁移版</p>
+              <h2>应急平台战略工作台</h2>
+              <p>
+                按 OPC 四层架构重组当前方案：主题层负责方向，任务层负责推进，脑层负责产出，成本层负责节奏与回流。
+              </p>
+            </div>
+            <div class="opc-health">
+              <span>战略健康度</span>
+              <strong id="opcHealth">--</strong>
+              <small>由 6 主题分数与任务状态聚合</small>
+            </div>
+          </div>
+
+          <div class="opc-grid">
+            <article class="opc-card theme-board">
+              <div class="opc-card-head">
+                <span>L1 · Theme Layer</span>
+                <strong>6 主题系统</strong>
+              </div>
+              <div class="opc-theme-grid" id="opcThemeGrid" aria-live="polite"></div>
+            </article>
+
+            <article class="opc-card task-board">
+              <div class="opc-card-head">
+                <span>L2 · Task Layer</span>
+                <strong>任务前置契约</strong>
+              </div>
+              <div class="task-distribution" id="taskDistribution"></div>
+              <div class="opc-task-list" id="opcTaskList"></div>
+            </article>
+
+            <article class="opc-card brain-board">
+              <div class="opc-card-head">
+                <span>L3 · Brain Layer</span>
+                <strong>三脑协同</strong>
+              </div>
+              <div class="brain-list" id="brainList"></div>
+            </article>
+
+            <article class="opc-card cost-board">
+              <div class="opc-card-head">
+                <span>L4 · Cost Layer</span>
+                <strong>成本与回流</strong>
+              </div>
+              <div class="cost-chart" id="costChart" aria-label="8周成本趋势"></div>
+              <div class="backflow-chart" id="backflowChart" aria-label="7日回流吞吐"></div>
+              <p class="cost-risk" id="costRisk"></p>
+            </article>
+          </div>
+
+          <div class="opc-lower-grid">
+            <article class="opc-card zoom-board">
+              <div class="opc-card-head">
+                <span>Strategic Zoom Panels</span>
+                <strong>战略任务 Zoom</strong>
+              </div>
+              <div class="zoom-buttons" id="zoomButtons"></div>
+              <div class="zoom-panel" id="zoomPanel"></div>
+            </article>
+
+            <article class="opc-card pipeline-board">
+              <div class="opc-card-head">
+                <span>Aggregator → JSON → HTML/MD</span>
+                <strong>数据聚合流水线</strong>
+              </div>
+              <ol class="pipeline-list" id="pipelineList"></ol>
+              <div class="automation-note" id="automationNote"></div>
+            </article>
+
+            <article class="opc-card registry-board">
+              <div class="opc-card-head">
+                <span>Panel Registry Roadmap</span>
+                <strong>面板登记册演变路线图</strong>
+              </div>
+              <ul class="registry-list" id="registryList"></ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="architecture">
+        <div class="section-head">
+          <p class="eyebrow">L1-L5 平台架构</p>
+          <h2>价值产生在 L1-L4，L5 是能量出口</h2>
+          <p>五层架构不是功能清单，而是一套从风险资产到应急行动的闭环系统。</p>
+        </div>
+        <div class="architecture-layout">
+          <div class="layer-stack" role="list" aria-label="五层架构">
+            <button class="layer-card active" type="button" data-layer="l1">
+              <span>L1</span>
+              <strong>风险本体</strong>
+              <small>对象 · 关系 · 动作 · 时空</small>
+            </button>
+            <button class="layer-card" type="button" data-layer="l2">
+              <span>L2</span>
+              <strong>风险监测</strong>
+              <small>多源接入 · 告警聚合</small>
+            </button>
+            <button class="layer-card" type="button" data-layer="l3">
+              <span>L3</span>
+              <strong>风险研判</strong>
+              <small>级联推演 · 决策可解释</small>
+            </button>
+            <button class="layer-card" type="button" data-layer="l4">
+              <span>L4</span>
+              <strong>风险预防</strong>
+              <small>主动部署 · 事件即激活</small>
+            </button>
+            <button class="layer-card" type="button" data-layer="l5">
+              <span>L5</span>
+              <strong>事件响应</strong>
+              <small>处置闭环 · 回写本体</small>
+            </button>
+          </div>
+
+          <article class="layer-detail" id="layerDetail">
+            <p class="detail-kicker">当前层级</p>
+            <h3>L1 风险本体</h3>
+            <p>
+              L1 是平台的语义底座。风险源、承灾体、应对力量、决策主体、信息载体被统一建模，后续监测、研判、预防和响应才不是孤立功能。
+            </p>
+            <dl>
+              <div>
+                <dt>核心输入</dt>
+                <dd>业务对象、空间网格、时间窗口、历史案例</dd>
+              </div>
+              <div>
+                <dt>关键输出</dt>
+                <dd>风险目录、关系图谱、动作规则、回写接口</dd>
+              </div>
+              <div>
+                <dt>客户可听懂的话</dt>
+                <dd>先把风险世界建成可推理的“城市底座”。</dd>
+              </div>
+            </dl>
+          </article>
+
+          <div class="flow-board" aria-label="五层架构流向">
+            <svg viewBox="0 0 720 360" role="img">
+              <title>五层架构数据流与控制流</title>
+              <defs>
+                <marker id="flowArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                  <path d="M1 1L8 5L1 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                </marker>
+              </defs>
+              <g class="flow-line data">
+                <path d="M80 286 C180 235 220 214 310 184 S470 123 640 73" marker-end="url(#flowArrow)" />
+                <text x="90" y="245">数据流：本体 → 监测 → 研判 → 预防 → 响应</text>
+              </g>
+              <g class="flow-line control">
+                <path d="M640 112 C520 160 465 188 370 210 S200 255 80 312" marker-end="url(#flowArrow)" />
+                <text x="343" y="286">控制流：响应反馈 → 本体演化</text>
+              </g>
+              <g class="flow-node n1"><rect x="42" y="250" width="112" height="58" rx="8"/><text x="98" y="274">L1</text><text x="98" y="294">风险本体</text></g>
+              <g class="flow-node n2"><rect x="182" y="203" width="112" height="58" rx="8"/><text x="238" y="227">L2</text><text x="238" y="247">风险监测</text></g>
+              <g class="flow-node n3"><rect x="322" y="156" width="112" height="58" rx="8"/><text x="378" y="180">L3</text><text x="378" y="200">风险研判</text></g>
+              <g class="flow-node n4"><rect x="462" y="109" width="112" height="58" rx="8"/><text x="518" y="133">L4</text><text x="518" y="153">风险预防</text></g>
+              <g class="flow-node n5"><rect x="602" y="62" width="112" height="58" rx="8"/><text x="658" y="86">L5</text><text x="658" y="106">事件响应</text></g>
+            </svg>
+          </div>
+        </div>
+
+        <div class="module-grid">
+          <article>
+            <span>旗舰模组 A</span>
+            <h3>级联推演</h3>
+            <p>解决“第二跳之后失效”：暴雨、内涝、危化、交通等关系被建成本体关系层。</p>
+          </article>
+          <article>
+            <span>旗舰模组 B</span>
+            <h3>决策可解释</h3>
+            <p>每个判断都能回到数据、规则、案例与推理链，让 AI 建议可审计、可复盘。</p>
+          </article>
+          <article>
+            <span>机制创新</span>
+            <h3>回写本体</h3>
+            <p>处置完成后把实际级联路径、阈值偏差、新风险点回写 L1，让平台越用越聪明。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel" id="cycle">
+        <div class="section-head">
+          <p class="eyebrow">客户共创原创模型</p>
+          <h2>双循环范式：常态环 × 应急环</h2>
+          <p>风险点是双环关联枢纽。常态环事前持续运转，应急环事后激活，处置复盘再回写本体。</p>
+        </div>
+        <div class="cycle-layout">
+          <div class="cycle-viz focus-normal" id="cycleViz">
+            <svg viewBox="0 0 680 640" role="img" aria-label="应急管理双循环范式">
+              <defs>
+                <marker id="arrowGreen" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M2 1L8 5L2 9" fill="none" stroke="#21886f" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+                </marker>
+                <marker id="arrowCoral" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M2 1L8 5L2 9" fill="none" stroke="#cf5f3e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+                </marker>
+              </defs>
+              <text class="cycle-title" x="340" y="34" text-anchor="middle">应急管理双循环范式 · 风险点为核</text>
+              <text class="cycle-subtitle" x="340" y="56" text-anchor="middle">常态环顺时针 × 应急环逆时针 × 莫比乌斯回写</text>
+
+              <g class="cycle-normal">
+                <circle cx="150" cy="300" r="118" class="ring-bg normal" />
+                <path class="ring-path normal" d="M 150 182 A 118 118 0 0 1 268 300" marker-end="url(#arrowGreen)" />
+                <path class="ring-path normal" d="M 268 300 A 118 118 0 0 1 150 418" marker-end="url(#arrowGreen)" />
+                <path class="ring-path normal" d="M 150 418 A 118 118 0 0 1 32 300" marker-end="url(#arrowGreen)" />
+                <path class="ring-path normal" d="M 32 300 A 118 118 0 0 1 150 182" marker-end="url(#arrowGreen)" />
+                <text class="ring-label normal" x="54" y="112">常态环 · 事前</text>
+                <text class="ring-note normal" x="54" y="130">识别 → 监测预警 → 预警研判 → 预案</text>
+                <g class="cycle-node normal-node" transform="translate(150 182)">
+                  <circle r="32" /><text y="-6">识别</text><text y="12">风险源建模</text>
+                </g>
+                <g class="cycle-node normal-node" transform="translate(268 300)">
+                  <circle r="32" /><text y="-6">监测</text><text y="12">预警</text>
+                </g>
+                <g class="cycle-node normal-node" transform="translate(150 418)">
+                  <circle r="32" /><text y="-6">预警</text><text y="12">研判</text>
+                </g>
+                <g class="cycle-node plan-node" transform="translate(32 300)">
+                  <circle r="32" /><text y="-6">预案</text><text y="12">主动预防</text>
+                </g>
+              </g>
+
+              <g class="cycle-emergency">
+                <circle cx="530" cy="300" r="118" class="ring-bg emergency" />
+                <path class="ring-path emergency" d="M 412 300 A 118 118 0 0 0 530 418" marker-end="url(#arrowCoral)" />
+                <path class="ring-path emergency" d="M 530 418 A 118 118 0 0 0 648 300" marker-end="url(#arrowCoral)" />
+                <path class="ring-path emergency" d="M 648 300 A 118 118 0 0 0 530 182" marker-end="url(#arrowCoral)" />
+                <path class="ring-path emergency" d="M 530 182 A 118 118 0 0 0 412 300" marker-end="url(#arrowCoral)" />
+                <text class="ring-label emergency" x="552" y="112">应急环 · 事后</text>
+                <text class="ring-note emergency" x="552" y="130">突发 → 研判 → 处置 → 复盘</text>
+                <g class="cycle-node emergency-node" transform="translate(412 300)">
+                  <circle r="32" /><text y="-6">突发</text><text y="12">事件</text>
+                </g>
+                <g class="cycle-node emergency-node" transform="translate(530 418)">
+                  <circle r="32" /><text y="-6">研判</text><text y="12">推演</text>
+                </g>
+                <g class="cycle-node emergency-node" transform="translate(648 300)">
+                  <circle r="32" /><text y="-6">处置</text><text y="12">激活</text>
+                </g>
+                <g class="cycle-node review-node" transform="translate(530 182)">
+                  <circle r="32" /><text y="-6">复盘</text><text y="12">回写</text>
+                </g>
+              </g>
+
+              <g class="cycle-risk">
+                <circle class="risk-glow" cx="340" cy="300" r="42" />
+                <circle class="risk-core" cx="340" cy="300" r="36" />
+                <text class="risk-title" x="340" y="290" text-anchor="middle">风险点</text>
+                <text class="risk-copy" x="340" y="308" text-anchor="middle">最小风险单元</text>
+                <text class="risk-copy" x="340" y="326" text-anchor="middle">L1 · 本体原子层</text>
+                <text class="interface-copy" x="340" y="366" text-anchor="middle">接口物：预案 + 监测数据</text>
+              </g>
+
+              <path id="mobiusPath" class="mobius-path" d="M 150 182 A 118 118 0 0 1 268 300 L 340 300 L 412 300 A 118 118 0 0 0 530 418 A 118 118 0 0 0 648 300 A 118 118 0 0 0 530 182 A 118 118 0 0 0 412 300 L 340 300 L 150 418 A 118 118 0 0 1 32 300 A 118 118 0 0 1 150 182 Z" />
+              <circle class="mobius-ball" r="9">
+                <animateMotion dur="16s" repeatCount="indefinite"><mpath href="#mobiusPath" /></animateMotion>
+              </circle>
+              <circle class="mobius-tail" r="6">
+                <animateMotion dur="16s" begin="-0.6s" repeatCount="indefinite"><mpath href="#mobiusPath" /></animateMotion>
+              </circle>
+              <text class="mobius-label" x="340" y="246" text-anchor="middle">∞ 常态即准备，应急即校正</text>
+
+              <g class="theory-row">
+                <text x="36" y="510">UNDRR 仙台框架</text>
+                <text x="190" y="510">ISO 31000</text>
+                <text x="310" y="510">Multi-Hazard EWS</text>
+                <text x="476" y="510">ICS + AAR</text>
+                <text x="580" y="510">PDCA</text>
+              </g>
+              <rect class="cycle-slogan" x="20" y="548" width="640" height="34" rx="8" />
+              <text class="cycle-slogan-text" x="340" y="570" text-anchor="middle">事件触发后从零组织响应 → 事件触发后激活已有部署</text>
+            </svg>
+          </div>
+
+          <aside class="cycle-panel">
+            <div class="cycle-tabs" role="group" aria-label="双循环聚焦">
+              <button class="cycle-tab active" type="button" data-cycle="normal">常态环</button>
+              <button class="cycle-tab" type="button" data-cycle="emergency">应急环</button>
+              <button class="cycle-tab" type="button" data-cycle="risk">风险点</button>
+              <button class="cycle-tab" type="button" data-cycle="mobius">莫比乌斯</button>
+            </div>
+            <div class="cycle-copy" id="cycleCopy">
+              <span>事前持续运转</span>
+              <h3>识别、监测预警、预警研判、预案</h3>
+              <p>常态环把风险维持在“被看见、被监测、被研判、被预防”的状态，平台价值沉淀在 L1-L4。</p>
+            </div>
+            <ul class="compact-list">
+              <li><strong>双触发：</strong>监测预警超阈值 + 突发事件直接激活</li>
+              <li><strong>双接口：</strong>预案 + 监测数据</li>
+              <li><strong>双验证：</strong>全球框架对标 + 本地业务回写</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="panel" id="resilience">
+        <div class="section-head">
+          <p class="eyebrow">城市韧性指数模型</p>
+          <h2>把“平台能力”转成客户能感知的韧性数值</h2>
+          <p>韧性不是口号，而是抗凹陷力、恢复速度、资源弹性的乘积式表达。</p>
+        </div>
+        <div class="resilience-layout">
+          <article class="resilience-control">
+            <div class="index-readout">
+              <span>韧性指数</span>
+              <strong id="resilienceScore">82</strong>
+              <p id="resilienceStatus">强韧：资源厚度充足，跨类调度顺畅。</p>
+            </div>
+            <label class="slider-row">
+              <span>抗凹陷力</span>
+              <input type="range" min="30" max="100" value="86" data-metric="resist" />
+              <output id="resistValue">86</output>
+            </label>
+            <label class="slider-row">
+              <span>恢复速度</span>
+              <input type="range" min="30" max="100" value="78" data-metric="recover" />
+              <output id="recoverValue">78</output>
+            </label>
+            <label class="slider-row">
+              <span>资源弹性</span>
+              <input type="range" min="30" max="100" value="80" data-metric="elastic" />
+              <output id="elasticValue">80</output>
+            </label>
+            <div class="formula">
+              城市韧性 = 抗凹陷力 × 恢复速度 × 资源弹性
+            </div>
+          </article>
+          <figure class="resilience-figure">
+            <img src="assets/city-resilience-index.svg" alt="城市韧性指数模型：球面厚度、冲击态、恢复曲线与公式" />
+          </figure>
+        </div>
+      </section>
+
+      <section class="panel" id="roadmap">
+        <div class="section-head">
+          <p class="eyebrow">从白皮书到可交付方案</p>
+          <h2>用四步把方法论落成平台建设路径</h2>
+          <p>每一步都对应客户可验收的成果，不停留在概念层。</p>
+        </div>
+        <div class="roadmap">
+          <article class="roadmap-step">
+            <span>01</span>
+            <h3>90 天样板</h3>
+            <p>选 3-5 个高价值风险场景，建立最小风险本体、监测接入和研判样例。</p>
+            <strong>交付：本体样板库 + 双循环演示屏</strong>
+          </article>
+          <article class="roadmap-step">
+            <span>02</span>
+            <h3>6 个月旗舰</h3>
+            <p>围绕级联推演和决策可解释建立 L3 旗舰能力，形成可汇报的差异化模组。</p>
+            <strong>交付：级联推演大屏 + 解释链档案</strong>
+          </article>
+          <article class="roadmap-step">
+            <span>03</span>
+            <h3>12 个月闭环</h3>
+            <p>打通 L1-L5，形成事件即激活、处置闭环、复盘回写本体的完整机制。</p>
+            <strong>交付：平台闭环验收包 + 回写规范</strong>
+          </article>
+          <article class="roadmap-step">
+            <span>04</span>
+            <h3>跨城平移</h3>
+            <p>把通用本体、指标体系、建设方法和演示驾驶舱沉淀为咨询输出资产。</p>
+            <strong>交付：跨城复制手册 + 标准方案包</strong>
+          </article>
+        </div>
+
+        <div class="decision-board">
+          <article>
+            <span>A</span>
+            <h3>先打概念</h3>
+            <p>适合首次拜访客户，用驾驶舱讲清楚范式价值和双循环逻辑。</p>
+          </article>
+          <article>
+            <span>B</span>
+            <h3>先打建设</h3>
+            <p>适合面对建设方，把 L1-L5 拆成可实施、可验收、可招采的能力包。</p>
+          </article>
+          <article>
+            <span>C</span>
+            <h3>先打评审</h3>
+            <p>适合面对主官或评审，用韧性指数和回写闭环证明投入价值。</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>脱敏演示版</span>
+      <span>客户共创原创模型</span>
+      <span>基于《应急管理平台架构白皮书 v1.1》</span>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

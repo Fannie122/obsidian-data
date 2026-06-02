@@ -1,0 +1,400 @@
+{
+  "nodes": [
+    {
+      "id": "root",
+      "type": "text",
+      "text": "# 范瑞芳：从天津一张图到安全价值证明系统\n\n核心命题：把多处室、多系统、多灾种、多角色的应急治理现场，翻译成可调研、可上线、可验收、可量化、可复制的安全价值证明系统。\n\n财富 = 借势 × 合力",
+      "x": 0,
+      "y": 0,
+      "width": 520,
+      "height": 260,
+      "color": "1"
+    },
+    {
+      "id": "md-deep",
+      "type": "file",
+      "file": "tj-project-materials-deep-evidence-pack.md",
+      "x": -720,
+      "y": -280,
+      "width": 360,
+      "height": 220,
+      "color": "4"
+    },
+    {
+      "id": "md-rough",
+      "type": "file",
+      "file": "tj-project-materials-for-yuanli-map.md",
+      "x": -720,
+      "y": -20,
+      "width": 360,
+      "height": 200,
+      "color": "4"
+    },
+    {
+      "id": "html-map",
+      "type": "file",
+      "file": "ruifang-yuanli-entrepreneurship-map-v3.html",
+      "x": -720,
+      "y": 220,
+      "width": 360,
+      "height": 200,
+      "color": "4"
+    },
+    {
+      "id": "prologue",
+      "type": "text",
+      "text": "## Prologue · 借势合力\n\n**借势**：十五五、AI、数据要素、基层治理和城市安全共同打开窗口。\n\n**合力**：业务调研、需求翻译、项目推进、价值确认和产品化沉淀串成同一条链。",
+      "x": 0,
+      "y": -430,
+      "width": 420,
+      "height": 220,
+      "color": "5"
+    },
+    {
+      "id": "g1",
+      "type": "text",
+      "text": "## Gate 1 · 原力觉醒\n\n原力不是写方案，而是把复杂现场翻译成可执行结构。\n\n四次翻译：政策 → 任务 → 需求 → 系统 → 客户看得见的价值。",
+      "x": 620,
+      "y": -500,
+      "width": 420,
+      "height": 210,
+      "color": "1"
+    },
+    {
+      "id": "g2",
+      "type": "text",
+      "text": "## Gate 2 · 品类独创\n\n品类不是一张图，而是**安全价值证明系统**。\n\n用数据、系统、机制和闭环，把城市安全从看不见的风险，变成领导、处室、现场和客户都能看见的治理价值。",
+      "x": 780,
+      "y": -160,
+      "width": 460,
+      "height": 250,
+      "color": "2"
+    },
+    {
+      "id": "g3",
+      "type": "text",
+      "text": "## Gate 3 · 模式升维\n\n从项目交付升维为：\n\n- 价值交付\n- FDE 现场小组\n- AI 底座\n- 10 个智能体产品\n- 验收回款闭环",
+      "x": 620,
+      "y": 230,
+      "width": 420,
+      "height": 240,
+      "color": "3"
+    },
+    {
+      "id": "g4",
+      "type": "text",
+      "text": "## Gate 4 · 壁垒锁定\n\n护城河来自**现场语义资产**，不是单点功能。\n\n知道哪些数据归谁、哪些处室负责、哪些系统断裂、哪些事件需要秒级响应、哪些节点能证明价值。",
+      "x": 0,
+      "y": 470,
+      "width": 520,
+      "height": 260,
+      "color": "6"
+    },
+    {
+      "id": "closing",
+      "type": "text",
+      "text": "## Closing · 远方\n\n天津样板的下一步，是**市级卡位 - 基层辐射 - 横向覆盖**。\n\n从天津样板，延展到企业安全、基层应急、数据要素、AI 智能体。",
+      "x": -600,
+      "y": 480,
+      "width": 460,
+      "height": 230,
+      "color": "5"
+    },
+    {
+      "id": "hard-numbers",
+      "type": "text",
+      "text": "## 最硬的 12 个数字\n\n- 19 个处室\n- 80 次调研\n- 80 份访谈纪要\n- 20 份需求调研分析报告\n- 20 多轮安全生产专项沟通\n- 23 份安全生产会议纪要\n- 23 项消防总队确认数据\n- 通信类装备 20 类 / 7,578 套\n- 救援类装备 135 类 / 777 套\n- 无人机 76 架\n- 14 个系统上线运行\n- 累计用户约 15,000 人",
+      "x": -1160,
+      "y": -520,
+      "width": 380,
+      "height": 420,
+      "color": "3"
+    },
+    {
+      "id": "commercial-kpi",
+      "type": "text",
+      "text": "## 商业闭环数字\n\n- 2026 确收目标：900 万\n- 回款目标：1,000 万\n- 新商机力争落单：超过 1,000 万\n- 资产化方向：AI+底座 + 10 个智能体产品",
+      "x": -1160,
+      "y": -40,
+      "width": 380,
+      "height": 230,
+      "color": "3"
+    },
+    {
+      "id": "evidence-client",
+      "type": "text",
+      "text": "## 客户认可证据\n\n客户感谢信确认：\n\n- 边建设、边应用、边保障\n- 防汛、森火、危化事故及时响应\n- 系统快速上线、稳定运行\n- 提升应急响应效率",
+      "x": -1160,
+      "y": 250,
+      "width": 380,
+      "height": 250,
+      "color": "2"
+    },
+    {
+      "id": "g1-evidence",
+      "type": "text",
+      "text": "### G1 证据\n\n“我的一招鲜”：极简的体系化分析框架。\n\n决策分析模型：信息收集、加工分析、结论输出、结果验证。\n\n缺口：个人双人格、阴影到超能力还需二次访谈。",
+      "x": 1120,
+      "y": -520,
+      "width": 360,
+      "height": 240,
+      "color": "1"
+    },
+    {
+      "id": "g2-evidence",
+      "type": "text",
+      "text": "### G2 证据\n\n指挥中心真实需求：\n\n- 多源接报统一归口\n- 电话/视频/短信叫应汇聚\n- 语音转文字\n- 自动生成快报\n- 一张图快速发叫应",
+      "x": 1300,
+      "y": -160,
+      "width": 360,
+      "height": 250,
+      "color": "2"
+    },
+    {
+      "id": "g3-evidence",
+      "type": "text",
+      "text": "### G3 证据\n\n项目群推进方案：\n\n- FDE：懂技术 + 懂业务 + 懂交付\n- 快速响应、快速原型、快速落地\n- 共性需求回流产品平台\n- 价值交付、验收确认、回款催收、系统迭代升级",
+      "x": 1120,
+      "y": 230,
+      "width": 390,
+      "height": 270,
+      "color": "3"
+    },
+    {
+      "id": "g4-evidence",
+      "type": "text",
+      "text": "### G4 证据\n\n现场语义资产：\n\n- 数据目录与一张图数据目录互补\n- 装备、预案、队伍、快报、知识库\n- 危化执法检查库、企业安全培训库、事故案例库、法规标准库\n- 验收与回款规则绑定",
+      "x": 580,
+      "y": 600,
+      "width": 420,
+      "height": 270,
+      "color": "6"
+    },
+    {
+      "id": "gap-ledger",
+      "type": "text",
+      "text": "## 缺口账本\n\n不能靠 TJ 项目材料强行补：\n\n- G1 双人格\n- G1 阴影 → 超能力\n- G2 三类同行对比\n- G3 个人创业收入结构\n- G4 四维护城河本人评分\n- Closing 十年画面感",
+      "x": -620,
+      "y": 780,
+      "width": 420,
+      "height": 300,
+      "color": "1"
+    },
+    {
+      "id": "next-actions",
+      "type": "text",
+      "text": "## 下一步动作\n\n1. 用 Canvas 作为 Obsidian 入口。\n2. 继续更新新版 H5。\n3. 补访谈缺口账本里的个人题。\n4. 把天津证据包产品化为标准演示包、销售包、交付包。\n5. 选择工贸/危化/基层中的一个场景做第二闭环。",
+      "x": -100,
+      "y": 850,
+      "width": 500,
+      "height": 300,
+      "color": "5"
+    },
+    {
+      "id": "p0-files",
+      "type": "text",
+      "text": "## P0/P1 输入材料包\n\n第一轮只喂 15 份：复盘、案例分享、感谢信、需求确认、系统现状、党委汇报问题、调研总结、成果战略地位、项目群推进、验收拆解、产值确认、危化 AI、工业安全产品计划、数据目录、十五五规划。\n\n不全量塞 16,000+ 文件。",
+      "x": -1160,
+      "y": 560,
+      "width": 380,
+      "height": 310,
+      "color": "4"
+    },
+    {
+      "id": "h5-title",
+      "type": "text",
+      "text": "## H5 标题更新\n\n范瑞芳：从天津一张图到安全价值证明系统\n\n副标题：把复杂应急现场翻译成可验证、可交付、可复制的城市安全智能体底座。",
+      "x": -320,
+      "y": -520,
+      "width": 440,
+      "height": 220,
+      "color": "5"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e-md-deep-root",
+      "fromNode": "md-deep",
+      "fromSide": "right",
+      "toNode": "root",
+      "toSide": "left",
+      "label": "字段级证据"
+    },
+    {
+      "id": "e-md-rough-root",
+      "fromNode": "md-rough",
+      "fromSide": "right",
+      "toNode": "root",
+      "toSide": "left",
+      "label": "目录级筛选"
+    },
+    {
+      "id": "e-root-html",
+      "fromNode": "root",
+      "fromSide": "left",
+      "toNode": "html-map",
+      "toSide": "right",
+      "label": "更新为 H5"
+    },
+    {
+      "id": "e-root-prologue",
+      "fromNode": "root",
+      "fromSide": "top",
+      "toNode": "prologue",
+      "toSide": "bottom",
+      "label": "借势 × 合力"
+    },
+    {
+      "id": "e-root-g1",
+      "fromNode": "root",
+      "fromSide": "right",
+      "toNode": "g1",
+      "toSide": "left",
+      "label": "我是谁"
+    },
+    {
+      "id": "e-root-g2",
+      "fromNode": "root",
+      "fromSide": "right",
+      "toNode": "g2",
+      "toSide": "left",
+      "label": "我为谁"
+    },
+    {
+      "id": "e-root-g3",
+      "fromNode": "root",
+      "fromSide": "right",
+      "toNode": "g3",
+      "toSide": "left",
+      "label": "我怎么赚"
+    },
+    {
+      "id": "e-root-g4",
+      "fromNode": "root",
+      "fromSide": "bottom",
+      "toNode": "g4",
+      "toSide": "top",
+      "label": "我怎么守"
+    },
+    {
+      "id": "e-root-closing",
+      "fromNode": "root",
+      "fromSide": "left",
+      "toNode": "closing",
+      "toSide": "top",
+      "label": "远方"
+    },
+    {
+      "id": "e-g1-evidence",
+      "fromNode": "g1",
+      "fromSide": "right",
+      "toNode": "g1-evidence",
+      "toSide": "left",
+      "label": "证据"
+    },
+    {
+      "id": "e-g2-evidence",
+      "fromNode": "g2",
+      "fromSide": "right",
+      "toNode": "g2-evidence",
+      "toSide": "left",
+      "label": "证据"
+    },
+    {
+      "id": "e-g3-evidence",
+      "fromNode": "g3",
+      "fromSide": "right",
+      "toNode": "g3-evidence",
+      "toSide": "left",
+      "label": "证据"
+    },
+    {
+      "id": "e-g4-evidence",
+      "fromNode": "g4",
+      "fromSide": "right",
+      "toNode": "g4-evidence",
+      "toSide": "left",
+      "label": "证据"
+    },
+    {
+      "id": "e-numbers-root",
+      "fromNode": "hard-numbers",
+      "fromSide": "right",
+      "toNode": "root",
+      "toSide": "left",
+      "label": "硬证据"
+    },
+    {
+      "id": "e-commercial-g3",
+      "fromNode": "commercial-kpi",
+      "fromSide": "right",
+      "toNode": "g3",
+      "toSide": "left",
+      "label": "商业闭环"
+    },
+    {
+      "id": "e-client-g1",
+      "fromNode": "evidence-client",
+      "fromSide": "right",
+      "toNode": "g1",
+      "toSide": "left",
+      "label": "外部认可"
+    },
+    {
+      "id": "e-client-g4",
+      "fromNode": "evidence-client",
+      "fromSide": "right",
+      "toNode": "g4",
+      "toSide": "left",
+      "label": "信任壁垒"
+    },
+    {
+      "id": "e-p0-root",
+      "fromNode": "p0-files",
+      "fromSide": "right",
+      "toNode": "root",
+      "toSide": "left",
+      "label": "输入材料"
+    },
+    {
+      "id": "e-h5-root",
+      "fromNode": "h5-title",
+      "fromSide": "right",
+      "toNode": "root",
+      "toSide": "left",
+      "label": "主标题"
+    },
+    {
+      "id": "e-gaps-next",
+      "fromNode": "gap-ledger",
+      "fromSide": "right",
+      "toNode": "next-actions",
+      "toSide": "left",
+      "label": "待补访谈"
+    },
+    {
+      "id": "e-closing-next",
+      "fromNode": "closing",
+      "fromSide": "bottom",
+      "toNode": "next-actions",
+      "toSide": "top",
+      "label": "下一步"
+    },
+    {
+      "id": "e-g4-next",
+      "fromNode": "g4",
+      "fromSide": "bottom",
+      "toNode": "next-actions",
+      "toSide": "top",
+      "label": "锁定动作"
+    },
+    {
+      "id": "e-prologue-h5",
+      "fromNode": "prologue",
+      "fromSide": "left",
+      "toNode": "h5-title",
+      "toSide": "right",
+      "label": "更新叙事"
+    }
+  ]
+}

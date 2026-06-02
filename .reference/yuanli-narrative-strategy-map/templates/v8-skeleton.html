@@ -1,0 +1,667 @@
+<!--
+═══════════════════════════════════════════════════════════════════════════
+   V8 SKELETON · narrative-strategy-map · render guide for LLM
+═══════════════════════════════════════════════════════════════════════════
+
+【CSS / 字体 / 头部】
+渲染时必须先从 examples/narrative-strategy-map-V8-reference.html 拷贝
+第 1-445 行 byte-identical（含 <!DOCTYPE html>, <html>, <head>, <link rel=...>,
+<style>...</style>, </head>, <body>）。
+
+【尾部 JS】
+渲染时必须从 examples/narrative-strategy-map-V8-reference.html 拷贝
+第 1288-1299 行 byte-identical（含 <script>IntersectionObserver...</script>
+</body></html>）。
+
+【本文件】
+只提供 body 内容的占位骨架。LLM 按 schema JSON 填 {{ ... }}，
+按 references/module-library.md 决定哪些模块装/砍。
+
+【占位语法】
+- {{ field }} — 必填字段；缺失时该字段所在的最小可独立元素整块删除
+- {{# if X }} ... {{/ if }} — 整段条件块；X 为 null 则整段删
+- {{# each items }} ... {{/ each }} — 遍历数组
+
+═══════════════════════════════════════════════════════════════════════════
+-->
+
+<!-- ═══ HERO ═══ -->
+<header class="hero">
+  <div class="hero-badge r">
+    NARRATIVE STRATEGY MAP <span class="dot">·</span> {{ meta.version_tag }} <span class="dot">·</span> {{ meta.sealed_year }}
+  </div>
+  <h1 class="r d1">{{ meta.hero_h1_line1 }}<br>{{ meta.hero_h1_line2 }}<span class="accent">{{ meta.hero_h1_accent }}</span></h1>
+  <p class="hero-sub r d2">{{ meta.hero_sub }}<br><span class="line2">{{ meta.hero_sub_line2 }}</span></p>
+  <div class="hero-formula r d3">借势 <span class="x">×</span> 合力 <span class="x">=</span> 复利</div>
+  <div class="hero-meta r d3">
+    SEALED {{ meta.sealed_date }} <span class="dot">·</span> {{ meta.hero_meta_credits }}
+  </div>
+  <div class="hero-scroll">向下探索 ↓</div>
+</header>
+
+<!-- ═══ STICKY NAV (FROZEN) ═══ -->
+<nav class="navbar">
+  <a href="#intro">借势合力</a>
+  <a href="#gate1">觉醒</a>
+  <a href="#gate2">品类</a>
+  <a href="#gate3">模式</a>
+  <a href="#gate4">壁垒</a>
+  <a href="#closing">远方</a>
+</nav>
+
+<!-- ═══ PROLOGUE · 借势合力 ═══ -->
+<section id="intro">
+  <div class="intro-wrap">
+    <p class="intro-tag r">PROLOGUE · 借势合力</p>
+    <h2 class="intro-title r">{{ prologue.title }}</h2>
+    <p class="intro-deck r d1">{{ prologue.deck }}</p>
+
+    <div class="intro-grid">
+      <div class="intro-card r">
+        <p class="label">借势 · BORROWING MOMENTUM</p>
+        <h4>{{ prologue.borrowing_momentum.heading }}</h4>
+        <p>{{ prologue.borrowing_momentum.value }}</p>
+        {{# if prologue.borrowing_momentum.footnote }}
+        <p class="footnote">{{ prologue.borrowing_momentum.footnote }}</p>
+        {{/ if }}
+      </div>
+      <div class="intro-card r d1">
+        <p class="label">合力 · COMBINING FORCES</p>
+        <h4>{{ prologue.combining_forces.heading }}</h4>
+        <p>{{ prologue.combining_forces.value }}</p>
+        {{# if prologue.combining_forces.footnote }}
+        <p class="footnote">{{ prologue.combining_forces.footnote }}</p>
+        {{/ if }}
+      </div>
+    </div>
+
+    {{# if prologue.quote }}
+    <div class="qb r">
+      <p>"{{ prologue.quote.text }}"</p>
+      <cite>— {{ prologue.quote.cite }}</cite>
+    </div>
+    {{/ if }}
+  </div>
+</section>
+
+<div class="sep">· · · · ·</div>
+
+<!-- ═══ GATE 01 · 原力觉醒 (color g1 red) ═══ -->
+<div class="gh g1 r" id="gate1">
+  <div class="gh-num">GATE 01</div>
+  <h2>原力觉醒</h2>
+  <div class="gh-rule"></div>
+  <p>我是谁——找到不变的能量原点</p>
+</div>
+
+<section>
+  <!-- 双人格 + 非对称优势 五维 -->
+  <div class="grid grid-2">
+    {{# if g1.dual_personality }}
+    <div class="card g1 r">
+      <div class="tag">双人格结构</div>
+      <h3>{{ g1.dual_personality.title }}</h3>
+      <p><em>{{ g1.dual_personality.elephant_label }}</em>{{ g1.dual_personality.elephant_desc }}</p>
+      <p><em>{{ g1.dual_personality.rider_label }}</em>{{ g1.dual_personality.rider_desc }}</p>
+    </div>
+    {{/ if }}
+    {{# if g1.asymmetric_advantage }}
+    <div class="card g1 r d1">
+      <div class="tag">非对称优势 · 5 维度判词</div>
+      <h3>{{ g1.asymmetric_advantage.title }}</h3>
+      <ul>
+        <li><em>动能回收</em> — {{ g1.asymmetric_advantage.dim_energy }}</li>
+        <li><em>努力产出</em> — {{ g1.asymmetric_advantage.dim_output }}</li>
+        <li><em>重复时长</em> — {{ g1.asymmetric_advantage.dim_repeat }}</li>
+        <li><em>认知偏差</em> — {{ g1.asymmetric_advantage.dim_bias }}</li>
+        <li><em>模仿壁垒</em> — {{ g1.asymmetric_advantage.dim_moat }}</li>
+      </ul>
+      {{# if g1.asymmetric_advantage.footnote }}<p class="footnote">{{ g1.asymmetric_advantage.footnote }}</p>{{/ if }}
+    </div>
+    {{/ if }}
+  </div>
+
+  <!-- 非理性痴迷 6 信号 + 生物结构三层 -->
+  <div class="grid grid-2">
+    {{# if g1.non_rational_obsession }}
+    <div class="card g1 r">
+      <div class="tag">非理性痴迷 · 6 信号</div>
+      <h3>{{ g1.non_rational_obsession.title }}</h3>
+      <ul>
+        {{# each g1.non_rational_obsession.signals }}<li><em>{{ this.name }}</em> — {{ this.detail }}</li>{{/ each }}
+      </ul>
+    </div>
+    {{/ if }}
+    {{# if g1.bio_structure }}
+    <div class="card g1 r d1">
+      <div class="tag">生物结构 · 三层驱动协同</div>
+      <h3>{{ g1.bio_structure.title }}</h3>
+      <p><em>骑象人</em>（理性）：{{ g1.bio_structure.rider }}</p>
+      <p><em>大象</em>（感性）：{{ g1.bio_structure.elephant }}</p>
+      <p><em>路径</em>（隐知识）：{{ g1.bio_structure.path }}</p>
+      {{# if g1.bio_structure.footnote }}<p class="footnote">{{ g1.bio_structure.footnote }}</p>{{/ if }}
+    </div>
+    {{/ if }}
+  </div>
+
+  <!-- 阴影 + 创始人故事弧 -->
+  <div class="grid grid-2">
+    {{# if g1.shadow_to_superpower }}
+    <div class="card g1 r">
+      <div class="tag">阴影 → 超能力</div>
+      <h3>{{ g1.shadow_to_superpower.title }}</h3>
+      <p>阴影：{{ g1.shadow_to_superpower.shadow }}</p>
+      <p><em>翻转：</em>{{ g1.shadow_to_superpower.superpower }}</p>
+    </div>
+    {{/ if }}
+    {{# if g1.founder_arc }}
+    <div class="card g1 r d1">
+      <div class="tag">创始人故事弧</div>
+      <h3>{{ g1.founder_arc.title }}</h3>
+      <p><strong style="color:var(--g1)">起点</strong> · {{ g1.founder_arc.start }}</p>
+      <p><strong style="color:var(--accent)">转折</strong> · {{ g1.founder_arc.turn }}</p>
+      <p><strong style="color:var(--g3)">当下</strong> · {{ g1.founder_arc.now }}</p>
+    </div>
+    {{/ if }}
+  </div>
+
+  {{# if g1.quote }}
+  <div class="qb r">
+    <p>"{{ g1.quote.text }}"</p>
+    <cite>— {{ g1.quote.cite }}</cite>
+  </div>
+  {{/ if }}
+
+  <!-- 创始人母题 -->
+  {{# if g1.founding_motif }}
+  <div style="margin:5rem 0 2rem;text-align:center">
+    <p style="font-family:'Manrope',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.45em;color:var(--g1);text-transform:uppercase">创始人母题 · FOUNDING MOTIF</p>
+    <h3 style="font-family:'Noto Serif SC',serif;font-size:1.85rem;font-weight:900;margin-top:.85rem;color:var(--g1)">{{ g1.founding_motif.verb }}</h3>
+    <p style="font-family:'Noto Serif SC',serif;font-size:1.05rem;color:var(--gray);margin-top:.65rem;font-weight:400;font-style:italic">{{ g1.founding_motif.sentence }}</p>
+  </div>
+
+  <p style="font-family:'Noto Serif SC',serif;font-size:1rem;line-height:1.85;color:var(--ink-soft);max-width:760px;margin:0 auto 2rem">{{ g1.founding_motif.paragraph }}</p>
+  {{/ if }}
+
+  <!-- A/B 框架（可选） -->
+  {{# if g1.ab_frame }}
+  <h4 style="font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.25em;color:var(--g1);text-transform:uppercase;margin:3rem 0 1.25rem">A/B 框架 · {{ g1.ab_frame.subtitle }}</h4>
+
+  <div class="ab-frame r">
+    <div class="h"></div>
+    <div class="h ha">A {{ g1.ab_frame.a_label }}</div>
+    <div class="h hb">B {{ g1.ab_frame.b_label }}</div>
+
+    <div class="dim">性质</div>
+    <div>{{ g1.ab_frame.a_nature }}</div>
+    <div>{{ g1.ab_frame.b_nature }}</div>
+
+    <div class="dim">输出</div>
+    <div>{{ g1.ab_frame.a_output }}</div>
+    <div>{{ g1.ab_frame.b_output }}</div>
+
+    <div class="dim">应用</div>
+    <div>{{ g1.ab_frame.a_application }}</div>
+    <div>{{ g1.ab_frame.b_application }}</div>
+  </div>
+
+  {{# if g1.ab_frame.underline }}
+  <div class="ab-underline r">
+    {{ g1.ab_frame.underline }}
+  </div>
+  {{/ if }}
+  {{/ if }}
+
+  <!-- 代表作品（可选） -->
+  {{# if g1.signature_case }}
+  <h4 style="font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.25em;color:var(--g1);text-transform:uppercase;margin:3rem 0 1.25rem">代表作品 · {{ g1.founding_motif.verb }}的具象证据</h4>
+
+  <div class="case-box r">
+    <h4>"{{ g1.signature_case.title }}"</h4>
+    <p>{{ g1.signature_case.setup }}</p>
+    <p class="case-quote">"{{ g1.signature_case.quote }}"</p>
+    <p class="meaning">{{ g1.signature_case.meaning }}</p>
+  </div>
+  {{/ if }}
+</section>
+
+<div class="sep">· · · · ·</div>
+
+<!-- ═══ GATE 02 · 品类独创 (color g2 blue) ═══ -->
+<div class="gh g2 r" id="gate2">
+  <div class="gh-num">GATE 02</div>
+  <h2>品类独创</h2>
+  <div class="gh-rule"></div>
+  <p>我为谁——锁定甜用户，解贵问题，开辟新品类</p>
+</div>
+
+<section>
+  <!-- 12 字真言 -->
+  <p style="font-family:'Manrope',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.3em;color:var(--g2);text-transform:uppercase;margin-bottom:1rem">战略心法 · 16 字真言</p>
+  <div class="four-word r">
+    <div class="word-card"><div class="word">{{ g2.twelve_word_mantra.word1.label }}</div><p>{{ g2.twelve_word_mantra.word1.detail }}</p></div>
+    <div class="word-card"><div class="word">{{ g2.twelve_word_mantra.word2.label }}</div><p>{{ g2.twelve_word_mantra.word2.detail }}</p></div>
+    <div class="word-card"><div class="word">{{ g2.twelve_word_mantra.word3.label }}</div><p>{{ g2.twelve_word_mantra.word3.detail }}</p></div>
+    <div class="word-card"><div class="word">{{ g2.twelve_word_mantra.word4.label }}</div><p>{{ g2.twelve_word_mantra.word4.detail }}</p></div>
+  </div>
+
+  {{# if g2.quote }}
+  <div class="qb r">
+    <p>"{{ g2.quote.text }}"</p>
+    <cite>— {{ g2.quote.cite }}</cite>
+  </div>
+  {{/ if }}
+
+  <!-- Card g2 类 (染黑启示 / 情绪经济 等可选) -->
+  {{# if g2.cards }}
+  <div class="grid grid-2">
+    {{# each g2.cards }}
+    <div class="card g2 r">
+      <div class="tag">{{ this.tag }}</div>
+      <h3>{{ this.title }}</h3>
+      <p>{{ this.body1 }}</p>
+      {{# if this.body2 }}<p>{{ this.body2 }}</p>{{/ if }}
+    </div>
+    {{/ each }}
+  </div>
+  {{/ if }}
+
+  <!-- 甜用户画像 -->
+  {{# if g2.sweet_user_profile }}
+  <h4 style="font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.25em;color:var(--g2);text-transform:uppercase;margin:3rem 0 1.25rem">甜用户画像 · {{ g2.sweet_user_profile.subtitle }}</h4>
+  <div class="profile r">
+    {{# each g2.sweet_user_profile.rows }}
+    <div class="profile-row">
+      <div class="key">{{ this.key }}</div>
+      <div class="val">{{ this.val_html }}</div>
+    </div>
+    {{/ each }}
+  </div>
+  {{/ if }}
+
+  <!-- 客户母题金字塔 -->
+  {{# if g2.value_pyramid }}
+  <h4 style="font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.25em;color:var(--g2);text-transform:uppercase;margin:3rem 0 1.25rem">客户母题 · 底层 + {{ g2.value_pyramid.upper_count }} 子场景</h4>
+
+  <div class="pyramid-wrap r">
+    <div class="pyramid">
+      {{# each g2.value_pyramid.tiers }}
+      <div class="pyramid-tier py-{{ this.tier_class }}">
+        <p class="tier-label">{{ this.label }}</p>
+        <h5>{{ this.heading }}</h5>
+        <p>{{ this.subtitle }}</p>
+      </div>
+      {{/ each }}
+      <div class="py-base">
+        <p class="label">— 底层共通母题 —</p>
+        <h5>{{ g2.value_pyramid.base_motif }}</h5>
+        <p>{{ g2.value_pyramid.base_subtitle }}</p>
+      </div>
+    </div>
+  </div>
+  {{/ if }}
+
+  <!-- 价值阶梯 -->
+  {{# if g2.value_ladder }}
+  <h4 style="font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.25em;color:var(--g2);text-transform:uppercase;margin:3rem 0 1.25rem">价值阶梯 · 不要在功能层卷，要在意义层锁</h4>
+  <div class="val-ladder r">
+    {{# each g2.value_ladder }}
+    <div class="vl-row"><div class="vl-them">{{ this.them }}</div><div class="vl-arrow">{{ this.arrow }}</div><div class="vl-us">{{ this.us }}</div></div>
+    {{/ each }}
+  </div>
+  {{/ if }}
+
+  <!-- 一句入脑 -->
+  {{# if g2.killer_one_liner }}
+  <div class="one-liner r">
+    <div class="label">一句入脑 · KILLER ONE-LINER</div>
+    <div class="text">{{ g2.killer_one_liner.text_html }}</div>
+  </div>
+  {{/ if }}
+
+  <!-- 第四种物种 -->
+  {{# if g2.fourth_species }}
+  <h4 style="font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.25em;color:var(--g2);text-transform:uppercase;margin:3rem 0 1.25rem">第四种物种 · 为什么不是他们</h4>
+  <div class="species r">
+    {{# each g2.fourth_species }}
+    <div class="sp-row"><div class="sp-name">{{ this.name }}</div><div class="sp-gap">{{ this.gap }}</div></div>
+    {{/ each }}
+  </div>
+  {{/ if }}
+
+  <!-- 4 象限品类验证矩阵 -->
+  {{# if g2.validation_matrix }}
+  <h4 style="font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.25em;color:var(--g2);text-transform:uppercase;margin:3rem 0 1rem">品类验证矩阵 · 「{{ g2.killer_one_liner.subject_word }}」成立了吗？</h4>
+  <p style="font-size:.85rem;color:var(--gray);font-style:italic;margin-bottom:1rem">四个信号判断品类是否被市场接受</p>
+  <div class="vmx r">
+    <div class="vmx-cell vmx-y"><div class="head">{{ g2.validation_matrix.customer.icon }} 客户端 · {{ g2.validation_matrix.customer.head }}</div><p>{{ g2.validation_matrix.customer.body }}</p></div>
+    <div class="vmx-cell vmx-w"><div class="head">{{ g2.validation_matrix.search.icon }} 搜索端 · {{ g2.validation_matrix.search.head }}</div><p>{{ g2.validation_matrix.search.body }}</p></div>
+    <div class="vmx-cell vmx-w"><div class="head">{{ g2.validation_matrix.peer.icon }} 同行端 · {{ g2.validation_matrix.peer.head }}</div><p>{{ g2.validation_matrix.peer.body }}</p></div>
+    <div class="vmx-cell vmx-r"><div class="head">{{ g2.validation_matrix.media.icon }} 媒体端 · {{ g2.validation_matrix.media.head }}</div><p>{{ g2.validation_matrix.media.body }}</p></div>
+  </div>
+  {{/ if }}
+
+  <!-- 16 场景品类扩展矩阵 -->
+  {{# if g2.category_extension }}
+  <h4 style="font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.25em;color:var(--g2);text-transform:uppercase;margin:3.5rem 0 1rem">品类扩展矩阵 · 长期能力版图</h4>
+  <p style="font-size:.85rem;color:var(--gray);font-style:italic;margin-bottom:1.5rem">同一个原力 × 不同场景 × 不同验证阶段</p>
+  <div class="cmx r">
+    {{# each g2.category_extension.sections }}
+    <p class="cmx-section">{{ this.section_label }}</p>
+    <div class="cmx-row">
+      <div class="cmx-level cmx-l-{{ this.color_letter }}">{{ this.level_label }}</div>
+      <div class="cmx-items">
+        {{# each this.items }}<div class="cmx-tag cmx-t-{{ this.color_letter }}">{{ this.label }}<span class="sub">{{ this.sub }}</span></div>{{/ each }}
+      </div>
+    </div>
+    {{/ each }}
+  </div>
+  <p style="text-align:center;font-size:.78rem;color:var(--gray);font-style:italic;margin-top:1rem">绿 = 已收钱 · 蓝 = 有信号 · 金 = 有洞察 · 紫 = 逻辑推演待验证</p>
+  {{/ if }}
+</section>
+
+<div class="sep">· · · · ·</div>
+
+<!-- ═══ GATE 03 · 模式升维 (color g3 green) ═══ -->
+<div class="gh g3 r" id="gate3">
+  <div class="gh-num">GATE 03</div>
+  <h2>模式升维</h2>
+  <div class="gh-rule"></div>
+  <p>怎么赚——前后财三链路 × 五层资源结构</p>
+</div>
+
+<section>
+  <p style="font-family:'Manrope',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.3em;color:var(--g3);text-transform:uppercase;margin-bottom:1rem">核心框架 · 前后财三链路</p>
+  <div class="three-links r">
+    <div class="link-card">
+      <div class="label">前链路 · 获客</div>
+      <h4>{{ g3.front_chain.heading_html }}</h4>
+      <ul>{{# each g3.front_chain.bullets }}<li>{{{ this }}}</li>{{/ each }}</ul>
+      {{# if g3.front_chain.footnote }}<p class="footnote">{{ g3.front_chain.footnote }}</p>{{/ if }}
+    </div>
+    <div class="link-card">
+      <div class="label">后链路 · 交付</div>
+      <h4>{{ g3.back_chain.heading_html }}</h4>
+      <ul>{{# each g3.back_chain.bullets }}<li>{{{ this }}}</li>{{/ each }}</ul>
+      {{# if g3.back_chain.footnote }}<p class="footnote">{{ g3.back_chain.footnote }}</p>{{/ if }}
+    </div>
+    <div class="link-card">
+      <div class="label">财链路 · 利润</div>
+      <h4>{{ g3.finance_chain.heading_html }}</h4>
+      <ul>{{# each g3.finance_chain.bullets }}<li>{{{ this }}}</li>{{/ each }}</ul>
+      {{# if g3.finance_chain.footnote }}<p class="footnote">{{ g3.finance_chain.footnote }}</p>{{/ if }}
+    </div>
+  </div>
+
+  {{# if g3.quote }}
+  <div class="qb r"><p>"{{ g3.quote.text }}"</p><cite>— {{ g3.quote.cite }}</cite></div>
+  {{/ if }}
+
+  <!-- 9 宫格三链路 × 验证程度 -->
+  {{# if g3.three_links_grid }}
+  <h4 style="font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.25em;color:var(--g3);text-transform:uppercase;margin:3rem 0 1rem">三链路 × 验证程度 · 9 宫格</h4>
+  <div class="ninegrid r">
+    <div class="ng-h"></div>
+    <div class="ng-h">前链路 · 获客</div>
+    <div class="ng-h">后链路 · 交付</div>
+    <div class="ng-h">财链路 · 利润</div>
+    {{# each g3.three_links_grid.rows }}
+    <div class="ng-rl">{{ this.row_label }}</div>
+    <div class="ng-cell">{{{ this.front }}}</div>
+    <div class="ng-cell">{{{ this.back }}}</div>
+    <div class="ng-cell">{{{ this.finance }}}</div>
+    {{/ each }}
+  </div>
+  {{/ if }}
+
+  <!-- 收入金字塔 -->
+  {{# if g3.income_pyramid }}
+  <h4 style="font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.25em;color:var(--g3);text-transform:uppercase;margin:3rem 0 1rem">收入金字塔 · 从单一到多线</h4>
+  <div class="pyramid-income r">
+    {{# each g3.income_pyramid.tiers }}
+    <div class="pi-tier pi-{{ @index_plus_one }}">
+      <h4>{{ this.title }}</h4>
+      <p>{{{ this.body }}}</p>
+    </div>
+    {{/ each }}
+  </div>
+  {{/ if }}
+
+  <!-- 五层资源结构 -->
+  {{# if g3.five_layers_alloc }}
+  <div style="margin:5rem 0 2rem;text-align:center">
+    <p style="font-family:'Manrope',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.45em;color:var(--g3);text-transform:uppercase">资源分配方法</p>
+    <h3 style="font-family:'Noto Serif SC',serif;font-size:1.85rem;font-weight:900;margin-top:.85rem;color:var(--g3)">目标 ≠ 资源</h3>
+    <p style="font-family:'Noto Serif SC',serif;font-size:1rem;color:var(--gray);margin-top:.65rem;font-weight:400">画了 N 条线不等于 N 条线都投资源。<br>把"目标"和"资源投入"两层分清楚。</p>
+  </div>
+
+  <div class="layers-list r">
+    {{# each g3.five_layers_alloc }}
+    <div class="ly-row ly-{{ this.row_class }}">
+      <div class="ly-num">{{ this.num }}</div>
+      <div class="ly-name"><h3>{{ this.name }}</h3><p class="en">{{ this.en }}</p></div>
+      <div class="ly-content">
+        {{# each this.items }}<p class="item"><span class="name">{{ this.name }}</span><span class="detail">{{ this.detail }}</span></p>{{/ each }}
+      </div>
+      <div class="ly-tags"><span class="ly-tag {{ this.tag_class }}">{{ this.tag }}</span></div>
+    </div>
+    {{/ each }}
+  </div>
+  {{/ if }}
+
+  <!-- 三层防白嫖咨询 -->
+  {{# if g3.funnel_three_layer }}
+  <h4 style="font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.25em;color:var(--g3);text-transform:uppercase;margin:3rem 0 1.25rem">{{ g3.funnel_three_layer.heading }}</h4>
+  <div class="funnel-3 r">
+    {{# each g3.funnel_three_layer.steps }}
+    <div class="fn-col l{{ @index_plus_one }}">
+      <p class="fn-step">{{ this.step_label }}</p>
+      <p class="fn-form">{{ this.form }}</p>
+      <h4>{{ this.title }}</h4>
+      <p class="what">{{ this.what }}</p>
+      <p class="defends">{{ this.defends }}</p>
+    </div>
+    {{/ each }}
+  </div>
+  {{/ if }}
+
+  <!-- 贝叶斯验证 -->
+  {{# if g3.bayes_status }}
+  <h4 style="font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.25em;color:var(--g3);text-transform:uppercase;margin:3rem 0 1.25rem">贝叶斯验证 · 大胆假设 · 小心求证</h4>
+  <div class="bayes r">
+    <div class="bayes-tier{{# if g3.bayes_status.is_c }} s-tier{{/ if }}"><div class="grade">C</div><div class="lvl">想法</div><p>只是一个 idea</p></div>
+    <div class="bayes-tier{{# if g3.bayes_status.is_b }} s-tier{{/ if }}"><div class="grade">B</div><div class="lvl">朋友说好</div><p>不可信</p></div>
+    <div class="bayes-tier{{# if g3.bayes_status.is_a }} s-tier{{/ if }}"><div class="grade">A</div><div class="lvl">陌生人付费</div><p>验证可行</p></div>
+    <div class="bayes-tier{{# if g3.bayes_status.is_s }} s-tier{{/ if }}"><div class="grade">S</div><div class="lvl">付费且转介绍</div><p>真正跑通</p></div>
+  </div>
+  {{/ if }}
+
+  <!-- 关键数字 -->
+  {{# if g3.kpi_panel }}
+  <h4 style="font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.25em;color:var(--g3);text-transform:uppercase;margin:3rem 0 1rem">关键数字面板 <span style="font-family:'Inter',sans-serif;font-size:.7rem;font-weight:400;color:var(--gray);letter-spacing:0;text-transform:none;font-style:italic">基线 · 持续监测</span></h4>
+  <div class="kpi r">
+    {{# each g3.kpi_panel }}
+    <div class="kpi-card"><div class="kpi-num">{{ this.num }}</div><div class="kpi-label">{{ this.label }}</div></div>
+    {{/ each }}
+  </div>
+  {{# if g3.kpi_note }}<p class="kpi-note">{{ g3.kpi_note }}</p>{{/ if }}
+  {{/ if }}
+
+  <!-- 当年着力点 -->
+  {{# if g3.anchor_current_year }}
+  <div class="anchor-2026 r">
+    <h4>当年着力点 · 长期方向在 {{ meta.sealed_year }} 的指向</h4>
+    <div class="anchor-list">
+      <div class="anchor-item"><div class="label">主投</div><p>{{ g3.anchor_current_year.main }}</p></div>
+      <div class="anchor-item"><div class="label">半投</div><p>{{ g3.anchor_current_year.half }}</p></div>
+      <div class="anchor-item"><div class="label">机会主义</div><p>{{ g3.anchor_current_year.opportunistic }}</p></div>
+      <div class="anchor-item"><div class="label">远景</div><p>{{ g3.anchor_current_year.vision }}</p></div>
+    </div>
+    <p style="font-size:.78rem;color:var(--gray);font-style:italic;margin-top:1rem;text-align:center">具体执行节奏 → 驾驶舱</p>
+  </div>
+  {{/ if }}
+</section>
+
+<div class="sep">· · · · ·</div>
+
+<!-- ═══ GATE 04 · 壁垒锁定 (color g4 purple) ═══ -->
+<div class="gh g4 r" id="gate4">
+  <div class="gh-num">GATE 04</div>
+  <h2>壁垒锁定</h2>
+  <div class="gh-rule"></div>
+  <p>怎么守——虚实入出 × 16+1 控制点</p>
+</div>
+
+<section>
+  <p style="font-family:'Manrope',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.3em;color:var(--g4);text-transform:uppercase;margin-bottom:1rem">检验标准 · 30 法则</p>
+  <p style="font-family:'Noto Serif SC',serif;font-size:1.05rem;line-height:1.8;color:var(--ink-soft);margin-bottom:2rem">"一家伟大的公司，未来十年赚的钱，要比过去十年更多。"<br><span style="font-style:italic;color:var(--gray);font-size:.92rem">通过构建壁垒，从"赚辛苦钱"转变为"赚复利钱"。</span></p>
+
+  <!-- 四维度 -->
+  <div class="four-dim r">
+    <div class="dim-card"><div class="glyph">虚</div><p class="desc">{{ g4.four_dim_score.V.desc }}</p><div class="score{{# if g4.four_dim_score.V.is_main }} bold{{/ if }}">{{ g4.four_dim_score.V.score_label }}</div></div>
+    <div class="dim-card"><div class="glyph">实</div><p class="desc">{{ g4.four_dim_score.R.desc }}</p><div class="score{{# if g4.four_dim_score.R.is_main }} bold{{/ if }}">{{ g4.four_dim_score.R.score_label }}</div></div>
+    <div class="dim-card"><div class="glyph">入</div><p class="desc">{{ g4.four_dim_score.I.desc }}</p><div class="score{{# if g4.four_dim_score.I.is_main }} bold{{/ if }}">{{ g4.four_dim_score.I.score_label }}</div></div>
+    <div class="dim-card"><div class="glyph">出</div><p class="desc">{{ g4.four_dim_score.O.desc }}</p><div class="score{{# if g4.four_dim_score.O.is_main }} bold{{/ if }}">{{ g4.four_dim_score.O.score_label }}</div></div>
+  </div>
+
+  <!-- 主攻方向变化（如适用）-->
+  {{# if g4.main_focus.direction_table }}
+  <h4 style="font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.25em;color:var(--g4);text-transform:uppercase;margin:3rem 0 1.25rem">主攻方向 · 资源分配</h4>
+  <div class="dirtable r">
+    <div class="dirrow h"><div>维度</div><div>当前主攻</div><div>第二主攻 / 维护</div></div>
+    {{# each g4.main_focus.direction_table }}
+    <div class="dirrow"><div class="dim">{{ this.dim }}</div><div class="v8">{{{ this.primary }}}</div><div class="v8">{{{ this.secondary }}}</div></div>
+    {{/ each }}
+  </div>
+  {{# if g4.main_focus.explanation }}
+  <p style="font-size:.92rem;line-height:1.8;color:var(--ink-soft);margin:1.5rem 0;padding:1.25rem 1.5rem;background:var(--g4-soft);border-left:3px solid var(--g4)">{{{ g4.main_focus.explanation }}}</p>
+  {{/ if }}
+  {{/ if }}
+
+  <!-- 16+1 控制点 accordion -->
+  {{# if g4.sixteen_controls }}
+  <h4 style="font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.25em;color:var(--g4);text-transform:uppercase;margin:3rem 0 1rem">16+1 控制点 · 点击展开</h4>
+  <p style="font-size:.85rem;color:var(--gray);font-style:italic;margin-bottom:1rem">评分作参考 · 季度自评 · 不在精度上较真</p>
+
+  <p class="ctrl-section-label">虚壁垒 · 品牌与文化</p>
+  {{# each g4.sixteen_controls.virtual }}
+  <div class="acc-item{{# if this.highlight }} highlight{{/ if }}" onclick="this.classList.toggle('open')"><div class="acc-head"><div class="acc-code virtual">{{ this.code }}</div><h5>{{ this.name }} <span class="score">{{ this.score_now }} → {{ this.score_target }}</span>{{# if this.star }} <span class="star">★ {{ this.star }}</span>{{/ if }}</h5><div class="acc-toggle">▼</div></div><div class="acc-body">{{{ this.body }}}</div></div>
+  {{/ each }}
+
+  <p class="ctrl-section-label implants">实壁垒 · 规模与效率</p>
+  {{# each g4.sixteen_controls.real }}
+  <div class="acc-item{{# if this.highlight }} highlight{{/ if }}" onclick="this.classList.toggle('open')"><div class="acc-head"><div class="acc-code implants">{{ this.code }}</div><h5>{{ this.name }} <span class="score">{{ this.score_now }} → {{ this.score_target }}</span>{{# if this.star }} <span class="star">★ {{ this.star }}</span>{{/ if }}</h5><div class="acc-toggle">▼</div></div><div class="acc-body">{{{ this.body }}}</div></div>
+  {{/ each }}
+
+  <p class="ctrl-section-label entry">入壁垒 · 转换成本</p>
+  {{# each g4.sixteen_controls.entry }}
+  <div class="acc-item{{# if this.highlight }} highlight{{/ if }}" onclick="this.classList.toggle('open')"><div class="acc-head"><div class="acc-code entry">{{ this.code }}</div><h5>{{ this.name }} <span class="score">{{ this.score_now }} → {{ this.score_target }}</span>{{# if this.star }} <span class="star">★ {{ this.star }}</span>{{/ if }}</h5><div class="acc-toggle">▼</div></div><div class="acc-body">{{{ this.body }}}</div></div>
+  {{/ each }}
+
+  <p class="ctrl-section-label exit">出壁垒 · 网络效应</p>
+  {{# each g4.sixteen_controls.exit }}
+  <div class="acc-item{{# if this.highlight }} highlight{{/ if }}" onclick="this.classList.toggle('open')"><div class="acc-head"><div class="acc-code exit">{{ this.code }}</div><h5>{{ this.name }} <span class="score">{{ this.score_now }} → {{ this.score_target }}</span>{{# if this.star }} <span class="star">★ {{ this.star }}</span>{{/ if }}</h5><div class="acc-toggle">▼</div></div><div class="acc-body">{{{ this.body }}}</div></div>
+  {{/ each }}
+  {{/ if }}
+
+  <!-- 总记分卡 -->
+  {{# if g4.total_score }}
+  <div class="scorecard r">
+    <div class="scorecard-title">壁垒总记分卡 · 虚实入出四维总览</div>
+    <div class="scorecard-grid">
+      <div style="display:flex;justify-content:center;align-items:center">
+        <svg viewBox="0 0 260 260" width="260" height="260" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="130,30 230,130 130,230 30,130" fill="none" stroke="rgba(15,15,15,.06)" stroke-width="1"/>
+          <polygon points="130,55 205,130 130,205 55,130" fill="none" stroke="rgba(15,15,15,.05)" stroke-width="1"/>
+          <polygon points="130,80 180,130 130,180 80,130" fill="none" stroke="rgba(15,15,15,.04)" stroke-width="1"/>
+          <line x1="130" y1="30" x2="130" y2="230" stroke="rgba(15,15,15,.05)"/>
+          <line x1="30" y1="130" x2="230" y2="130" stroke="rgba(15,15,15,.05)"/>
+          <!-- 评分（按 V * 10 + 5 计算各坐标，130 是中心）-->
+          <polygon points="{{ g4.total_score.radar_polygon_points }}" fill="rgba(192,57,43,.10)" stroke="var(--accent)" stroke-width="1.5"/>
+          <circle cx="130" cy="{{ g4.total_score.V_y }}" r="4" fill="#6B5B95"/>
+          <circle cx="{{ g4.total_score.R_x }}" cy="130" r="4" fill="#4A7C59"/>
+          <circle cx="130" cy="{{ g4.total_score.I_y }}" r="4" fill="#2E5984"/>
+          <circle cx="{{ g4.total_score.O_x }}" cy="130" r="4" fill="#C0392B"/>
+          <text x="130" y="20" text-anchor="middle" fill="#6B5B95" font-size="11" font-weight="700">虚 · {{ g4.total_score.V_score }}</text>
+          <text x="245" y="134" text-anchor="start" fill="#4A7C59" font-size="11" font-weight="700">实 · {{ g4.total_score.R_score }}{{# if g4.total_score.R_is_main }} ★{{/ if }}</text>
+          <text x="130" y="252" text-anchor="middle" fill="#2E5984" font-size="11" font-weight="700">入 · {{ g4.total_score.I_score }}</text>
+          <text x="15" y="134" text-anchor="end" fill="#C0392B" font-size="11" font-weight="700">出 · {{ g4.total_score.O_score }}</text>
+        </svg>
+      </div>
+      <div class="scorecard-bars">
+        <div>
+          <div class="sb-row"><span class="sb-name virtual">虚壁垒 · 品牌文化</span><span class="sb-num virtual">{{ g4.total_score.V_from }} → {{ g4.total_score.V_to }}</span></div>
+          <div class="sb-bar"><div class="sb-fill virtual" style="width:{{ g4.total_score.V_pct }}%"></div></div>
+          <p class="sb-detail">{{ g4.total_score.V_detail }}</p>
+        </div>
+        <div>
+          <div class="sb-row"><span class="sb-name implants">实壁垒 · 规模效率</span><span class="sb-num implants">{{ g4.total_score.R_from }} → {{ g4.total_score.R_to }}{{# if g4.total_score.R_is_main }} ★{{/ if }}</span></div>
+          <div class="sb-bar"><div class="sb-fill implants" style="width:{{ g4.total_score.R_pct }}%"></div></div>
+          <p class="sb-detail">{{ g4.total_score.R_detail }}</p>
+        </div>
+        <div>
+          <div class="sb-row"><span class="sb-name entry">入壁垒 · 转换成本</span><span class="sb-num entry">{{ g4.total_score.I_from }} → {{ g4.total_score.I_to }}</span></div>
+          <div class="sb-bar"><div class="sb-fill entry" style="width:{{ g4.total_score.I_pct }}%"></div></div>
+          <p class="sb-detail">{{ g4.total_score.I_detail }}</p>
+        </div>
+        <div>
+          <div class="sb-row"><span class="sb-name exit">出壁垒 · 网络效应</span><span class="sb-num exit">{{ g4.total_score.O_from }} → {{ g4.total_score.O_to }}</span></div>
+          <div class="sb-bar"><div class="sb-fill exit" style="width:{{ g4.total_score.O_pct }}%"></div></div>
+          <p class="sb-detail">{{ g4.total_score.O_detail }}</p>
+        </div>
+      </div>
+    </div>
+    <p class="total-score">综合壁垒评分 {{ g4.total_score.current }} → 目标 <em>{{ g4.total_score.target }} / 10</em><br><span style="font-style:italic;font-size:.78rem;color:var(--gray);font-weight:400">{{ g4.total_score.strategy_line }}</span></p>
+  </div>
+  {{/ if }}
+
+  {{# if g4.quote }}
+  <div class="qb r"><p>"{{ g4.quote.text }}"</p><cite>— {{ g4.quote.cite }}</cite></div>
+  {{/ if }}
+</section>
+
+<div class="sep">· · · · ·</div>
+
+<!-- ═══ CLOSING · 远方 ═══ -->
+<div class="closing" id="closing">
+  <p class="closing-eyebrow">— 通关地图 · 总结 —</p>
+  <h2>{{ closing.h2_line1 }}，<br>{{ closing.h2_line2_prefix }}<em>{{ closing.h2_line2_accent }}</em></h2>
+  <p class="closing-deck">{{ closing.deck }}</p>
+
+  <div class="closing-pair">
+    <div class="closing-side">
+      <p class="label">攻 · 创富</p>
+      <h4>{{ closing.attack_heading }}</h4>
+      <ul>{{# each closing.attack_side }}<li>{{ this }}</li>{{/ each }}</ul>
+    </div>
+    <div class="closing-side">
+      <p class="label">守 · 守富</p>
+      <h4>{{ closing.defend_heading }}</h4>
+      <ul>{{# each closing.defend_side }}<li>{{ this }}</li>{{/ each }}</ul>
+    </div>
+  </div>
+
+  <!-- 千里江山图 -->
+  <div class="vision-paint">
+    <p class="label">— 千里江山图 · 远方 —</p>
+    {{# each closing.vision_paint }}<p>{{{ this }}}</p>{{/ each }}
+    {{# if closing.next_anchor }}<p><em>{{ closing.next_anchor }}</em></p>{{/ if }}
+  </div>
+
+  <div class="closing-final">
+    {{{ closing.final_line }}}
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  {{ meta.subject_name }} · NARRATIVE STRATEGY MAP {{ meta.version_tag }} <span class="dot">·</span> <span class="accent">SEALED</span> {{ meta.sealed_date }} <span class="dot">·</span> {{ meta.hero_meta_credits }}
+
+  {{# if meta.colophon_note }}
+  <p class="colophon-note">
+    {{ meta.colophon_note }}
+  </p>
+  {{/ if }}
+</footer>
+
+<!-- ═══ END BODY · NOW APPEND V8 REFERENCE LINES 1288-1299 (script + </body></html>) ═══ -->

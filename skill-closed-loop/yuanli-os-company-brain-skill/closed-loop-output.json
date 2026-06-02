@@ -1,0 +1,85 @@
+{
+  "skill": "yuanli-os-company-brain-skill",
+  "date": "2026-06-01",
+  "installed_path": "C:\\Users\\GS11DZ02382\\.codex\\skills\\yuanli-os-company-brain-skill",
+  "wiki_root": "C:\\Users\\GS11DZ02382\\.codex\\skills\\yuanli-os-company-brain-skill\\examples\\wiki",
+  "execution_mode": "node_equivalent_static_executor",
+  "python_native_execution": {
+    "status": "blocked",
+    "reason": "No python/python3/py on PATH; portable Python zip download was incomplete and could not be extracted."
+  },
+  "relationship_graph": {
+    "pages": 9,
+    "edges": 13,
+    "nodes": 11,
+    "by_type": {
+      "derives-from": 5,
+      "supports": 4,
+      "owns": 1,
+      "commits-to": 3
+    },
+    "by_source": {
+      "explicit": 9,
+      "derived-from-decision": 4
+    }
+  },
+  "wiki_lint_l10": {
+    "hard_errors": 0,
+    "warnings": 0
+  },
+  "metacognition_signals": {
+    "freshness": {
+      "fresh": 9,
+      "aging": 0,
+      "stale": 0
+    }
+  },
+  "right_time_surface": {
+    "surface_count": 7,
+    "items": [
+      {
+        "rel": "concepts/dual-axis-rubric.md",
+        "title": "Dual-axis maturity rubric",
+        "type": "concept",
+        "circle": "institutional"
+      },
+      {
+        "rel": "concepts/example-entity-alice.md",
+        "title": "alice (example entity)",
+        "type": "entity",
+        "circle": "shared"
+      },
+      {
+        "rel": "concepts/right-time-surface.md",
+        "title": "Right-time surface",
+        "type": "concept",
+        "circle": "institutional"
+      },
+      {
+        "rel": "concepts/typed-relationships-schema.md",
+        "title": "Typed relationships schema (mini)",
+        "type": "concept",
+        "circle": "institutional"
+      },
+      {
+        "rel": "decisions/2026-05-02-example-skill-distillation.md",
+        "title": "Example decision: distill Company Brain into a public skill",
+        "type": "decision",
+        "circle": "shared"
+      },
+      {
+        "rel": "sources/transcripts/2026-05-02-example-meeting-transcript.md",
+        "title": "Example meeting transcript: distill Company Brain into a skill",
+        "type": "transcript",
+        "circle": "raw"
+      },
+      {
+        "rel": "syntheses/example-synthesis-company-brain-overview.md",
+        "title": "Company Brain overview (synthesis)",
+        "type": "synthesis",
+        "circle": "institutional"
+      }
+    ]
+  },
+  "verdict": "pass_with_degraded_execution"
+}

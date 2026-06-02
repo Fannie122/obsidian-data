@@ -1,0 +1,9 @@
+# 不入库：含真实学员案例的 gold-standard（隐私）+ 原力创业课程 IP 的完整 HTML 母图
+# 本 skill 在本地依赖这两个文件做 CSS byte-identical 校验与渲染参照；
+# 公开仓库只发布蒸馏后的方法论文本(references/) + client-clean 的可移植 prompt(agent-prompt-export.md §4 含 CSS) + 骨架(templates/)。
+examples/narrative-strategy-map-V8-reference.html
+examples/tongguan-map-V3-reference.html
+
+# OS / 编辑器
+.DS_Store
+*.swp

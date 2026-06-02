@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>范瑞芳 · 安全价值证明创业通关地图 V2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAFAFA; --bg-alt:#F2F2F0; --bg-card:#FFFFFF; --bg-soft:#EFEDE6;
+    --ink:#0F0F0F; --ink-soft:#2A2A2A;
+    --gray:#6B6B6B; --gray-light:#ADADAD; --gray-faint:#D9D9D9;
+    --accent:#C0392B;
+    --g1:#C0392B; --g1-soft:rgba(192,57,43,.08); --g1-border:rgba(192,57,43,.18);
+    --g2:#2E5984; --g2-soft:rgba(46,89,132,.08); --g2-border:rgba(46,89,132,.18);
+    --g3:#4A7C59; --g3-soft:rgba(74,124,89,.08); --g3-border:rgba(74,124,89,.18);
+    --g4:#6B5B95; --g4-soft:rgba(107,91,149,.08); --g4-border:rgba(107,91,149,.18);
+    --gold:#B8964F;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{font-size:16px;scroll-behavior:smooth;scroll-padding-top:64px}
+  body{background:var(--bg);color:var(--ink);font-family:'Inter','Noto Sans SC',sans-serif;font-weight:400;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  em{font-style:normal;color:var(--accent);font-weight:500}
+  a{color:inherit;text-decoration:none}
+  section{max-width:1200px;margin:0 auto;padding:0 3rem}
+
+  /* ═══ HERO ═══ */
+  .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 2rem 3rem;position:relative}
+  .hero-badge{font-family:'Manrope',sans-serif;font-size:.65rem;letter-spacing:.55em;color:var(--gray);text-transform:uppercase;margin-bottom:2.5rem;padding-bottom:.85rem;border-bottom:1px solid var(--ink);display:inline-block}
+  .hero-badge .dot{color:var(--accent);margin:0 .5em}
+  .hero h1{font-family:'Noto Serif SC','Manrope',serif;font-size:clamp(3rem,7vw,5.75rem);font-weight:900;line-height:1.05;letter-spacing:-.025em;color:var(--ink)}
+  .hero h1 span.accent{color:var(--accent);font-style:italic}
+  .hero-sub{font-family:'Noto Serif SC',serif;font-size:clamp(1rem,2vw,1.25rem);color:var(--ink-soft);margin-top:2rem;max-width:680px;line-height:2;font-weight:400}
+  .hero-sub .line2{color:var(--gray);font-style:italic;display:block;margin-top:.5rem}
+  .hero-formula{margin-top:3.5rem;font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.4em;color:var(--accent);border:1px solid var(--ink);padding:.85rem 2.25rem;text-transform:uppercase}
+  .hero-formula .x{margin:0 .5em;color:var(--ink)}
+  .hero-meta{margin-top:2rem;font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--gray);letter-spacing:.15em}
+  .hero-meta .dot{color:var(--accent);margin:0 .8em}
+  .hero-scroll{position:absolute;bottom:2.5rem;font-family:'Manrope',sans-serif;font-size:.6rem;font-weight:600;letter-spacing:.45em;color:var(--gray);animation:pulse 2s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:.4}50%{opacity:.9}}
+
+  /* ═══ NAV ═══ */
+  nav.navbar{position:sticky;top:0;z-index:100;background:rgba(250,250,250,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--ink);display:flex;justify-content:center;gap:0;flex-wrap:wrap}
+  nav.navbar a{padding:.95rem 1.15rem;font-family:'Manrope',sans-serif;font-size:.65rem;font-weight:600;letter-spacing:.2em;color:var(--gray);text-transform:uppercase;transition:color .25s;position:relative}
+  nav.navbar a:hover{color:var(--accent)}
+  nav.navbar a::after{content:'';position:absolute;bottom:0;left:50%;width:0;height:1px;background:var(--accent);transition:all .25s;transform:translateX(-50%)}
+  nav.navbar a:hover::after{width:60%}
+
+  /* ═══ INTRO · 借势合力 ═══ */
+  .intro-wrap{padding:6rem 0 4rem}
+  .intro-tag{font-family:'Manrope',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.3em;color:var(--accent);text-transform:uppercase;margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem}
+  .intro-tag::before{content:'';width:32px;height:1px;background:var(--accent)}
+  .intro-title{font-family:'Noto Serif SC',serif;font-weight:900;font-size:2.5rem;line-height:1.2;letter-spacing:-.015em;margin-bottom:.85rem}
+  .intro-deck{font-family:'Noto Serif SC',serif;font-size:1.15rem;color:var(--gray);font-weight:400;line-height:1.7;max-width:760px;margin-bottom:3rem}
+  .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem}
+  .intro-card{background:var(--bg-card);border:1px solid var(--ink);padding:2rem;position:relative;transition:transform .35s ease,box-shadow .35s ease}
+  .intro-card:hover{transform:translateY(-3px);box-shadow:5px 5px 0 var(--ink)}
+  .intro-card .label{font-family:'Manrope',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.25em;color:var(--accent);text-transform:uppercase;margin-bottom:1rem}
+  .intro-card h4{font-family:'Noto Serif SC',serif;font-weight:700;font-size:1.35rem;line-height:1.35;margin-bottom:.85rem}
+  .intro-card p{font-size:.92rem;line-height:1.75;color:var(--ink-soft)}
+  .intro-card p+p{margin-top:.6rem}
+  .intro-card .footnote{margin-top:.85rem;font-size:.78rem;color:var(--gray);font-style:italic;line-height:1.6;padding-top:.85rem;border-top:1px dotted var(--gray-faint)}
+
+  /* ═══ QUOTE ═══ */
+  .qb{border-left:3px solid var(--accent);padding:1.25rem 1.85rem;margin:2.5rem 0;background:rgba(192,57,43,.04)}
+  .qb p{font-family:'Noto Serif SC',serif;font-style:italic;font-size:1rem;line-height:1.85;color:var(--ink-soft)}
+  .qb cite{display:block;margin-top:.65rem;font-family:'Manrope',sans-serif;font-size:.72rem;color:var(--gray);font-style:normal;letter-spacing:.12em;font-weight:500}
+
+  /* ═══ SEPARATOR ═══ */
+  .sep{text-align:center;padding:5rem 0 4rem;color:var(--gray-light);font-size:.65rem;letter-spacing:.85em;font-family:'Manrope',sans-serif;font-weight:600}
+
+  /* ═══ GATE HEADER ═══ */
+  .gh{text-align:center;padding:6rem 2rem 3rem;scroll-margin-top:64px}
+  .gh-num{font-family:'Manrope',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.7em;color:var(--gray);margin-bottom:1.25rem}
+  .gh h2{font-family:'Noto Serif SC',serif;font-size:clamp(2.25rem,5.5vw,3.5rem);font-weight:900;line-height:1.15;margin-bottom:.85rem;letter-spacing:-.02em}
+  .gh p{color:var(--gray);font-size:1.05rem;letter-spacing:.04em;font-family:'Noto Serif SC',serif}
+  .gh.g1 h2{color:var(--g1)} .gh.g2 h2{color:var(--g2)} .gh.g3 h2{color:var(--g3)} .gh.g4 h2{color:var(--g4)}
+  .gh-rule{width:50px;height:2px;margin:1.5rem auto 1.25rem}
+  .gh.g1 .gh-rule{background:var(--g1)} .gh.g2 .gh-rule{background:var(--g2)} .gh.g3 .gh-rule{background:var(--g3)} .gh.g4 .gh-rule{background:var(--g4)}
+
+  /* ═══ CARDS ═══ */
+  .grid{display:grid;gap:1.25rem;margin:2rem 0}
+  .grid-2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+  .grid-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+  .grid-4{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+  .card{background:var(--bg-card);border:1px solid var(--gray-faint);padding:1.85rem 1.65rem;transition:all .35s ease;position:relative}
+  .card:hover{transform:translateY(-2px);box-shadow:4px 4px 0 var(--gray-faint)}
+  .card.g1{border-left:3px solid var(--g1)} .card.g2{border-left:3px solid var(--g2)}
+  .card.g3{border-left:3px solid var(--g3)} .card.g4{border-left:3px solid var(--g4)}
+  .card .tag{font-family:'Manrope',sans-serif;font-weight:700;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;margin-bottom:.85rem}
+  .card.g1 .tag{color:var(--g1)} .card.g2 .tag{color:var(--g2)} .card.g3 .tag{color:var(--g3)} .card.g4 .tag{color:var(--g4)}
+  .card h3{font-family:'Noto Serif SC',serif;font-size:1.15rem;font-weight:700;line-height:1.4;margin-bottom:.85rem}
+  .card p{font-size:.88rem;color:var(--ink-soft);line-height:1.75}
+  .card p+p{margin-top:.55rem}
+  .card ul{list-style:none;padding:0;font-size:.88rem;color:var(--ink-soft);line-height:1.85}
+  .card ul li{padding-left:1.1rem;position:relative;padding-bottom:.15rem}
+  .card ul li::before{content:'·';position:absolute;left:0;color:var(--accent);font-weight:700}
+  .card.g1 ul li::before{color:var(--g1)} .card.g2 ul li::before{color:var(--g2)} .card.g3 ul li::before{color:var(--g3)} .card.g4 ul li::before{color:var(--g4)}
+  .card .footnote{margin-top:.85rem;font-size:.78rem;color:var(--gray);font-style:italic;line-height:1.6}
+
+  /* ═══ KEY JUDGEMENT ═══ */
+  .key-judge{background:var(--ink);color:var(--bg);padding:1.5rem 2rem;margin:2rem 0;font-size:.95rem;line-height:1.65;position:relative;padding-left:3rem}
+  .key-judge::before{content:'※';position:absolute;top:1rem;left:.85rem;color:var(--accent);font-size:1.1rem}
+  .key-judge strong{color:var(--gold);font-weight:600}
+
+  /* ═══ AB FRAME ═══ */
+  .ab-frame{display:grid;grid-template-columns:140px 1fr 1fr;border:1px solid var(--g1);margin:2rem 0;background:var(--bg-card)}
+  .ab-frame > div{padding:1rem 1.2rem;border-bottom:1px solid var(--g1-border);font-size:.92rem;line-height:1.55}
+  .ab-frame > div:nth-last-child(-n+3){border-bottom:none}
+  .ab-frame .h{font-family:'Manrope',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;background:var(--g1-soft);color:var(--g1);border-bottom:1px solid var(--g1)}
+  .ab-frame .ha{border-left:3px solid var(--ink)} .ab-frame .hb{border-left:3px solid var(--g1)}
+  .ab-frame .dim{font-family:'Manrope',sans-serif;font-weight:600;font-size:.78rem;color:var(--gray);letter-spacing:.04em;text-transform:uppercase;background:var(--bg-alt)}
+
+  /* ═══ AB UNDERLINE ═══ */
+  .ab-underline{padding:1.5rem 1.85rem;background:var(--g1-soft);border-left:3px solid var(--g1);margin:1.5rem 0;font-size:.95rem;line-height:1.7;font-family:'Noto Serif SC',serif}
+  .ab-underline strong{color:var(--g1);font-weight:700}
+
+  /* ═══ CASE BOX (代表作) ═══ */
+  .case-box{background:var(--bg-card);border:2px solid var(--g1);padding:2rem 2.25rem;margin:2rem 0;position:relative}
+  .case-box::before{content:'CASE';position:absolute;top:-.65rem;left:1.5rem;background:var(--bg);color:var(--g1);font-family:'Manrope',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.25em;padding:0 .6rem}
+  .case-box h4{font-family:'Noto Serif SC',serif;font-weight:700;font-size:1.4rem;margin-bottom:.85rem;color:var(--g1)}
+  .case-box .case-quote{font-family:'Noto Serif SC',serif;font-style:italic;font-size:1rem;line-height:1.75;color:var(--ink);padding-left:1rem;border-left:2px solid var(--g1);margin:1rem 0}
+  .case-box p{font-size:.92rem;line-height:1.7;color:var(--ink-soft)}
+  .case-box .meaning{margin-top:1rem;font-size:.92rem;font-weight:500;color:var(--g1)}
+
+  /* ═══ FOUR WORD ═══ */
+  .four-word{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin:2rem 0}
+  .word-card{background:var(--bg-card);border:1px solid var(--g2-border);padding:1.65rem 1.25rem;text-align:center;transition:all .35s ease}
+  .word-card:hover{border-color:var(--g2);transform:translateY(-2px)}
+  .word-card .word{font-family:'Noto Serif SC',serif;font-size:1.4rem;font-weight:900;color:var(--g2);margin-bottom:.5rem;letter-spacing:.05em}
+  .word-card p{font-size:.78rem;color:var(--ink-soft);line-height:1.55}
+
+  /* ═══ PROFILE BOX ═══ */
+  .profile{border:1px solid var(--g2);background:var(--bg-card);margin:1.5rem 0}
+  .profile-row{display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid var(--g2-border);align-items:stretch}
+  .profile-row:last-child{border-bottom:none}
+  .profile-row > div{padding:1.15rem 1.5rem}
+  .profile-row .key{font-family:'Manrope',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.18em;color:var(--gray);background:var(--g2-soft);border-right:1px solid var(--g2-border);display:flex;align-items:center;text-transform:uppercase}
+  .profile-row .val{font-size:.95rem;line-height:1.55}
+  .profile-row .val strong{color:var(--g2);font-weight:600}
+
+  /* ═══ MIND PYRAMID ═══ */
+  .pyramid-wrap{margin:2rem 0;padding:1.5rem 0}
+  .pyramid{display:flex;flex-direction:column;align-items:center;gap:.5rem}
+  .pyramid-tier{padding:.75rem 1.5rem;text-align:center;transition:transform .35s ease;position:relative}
+  .pyramid-tier:hover{transform:scale(1.02)}
+  .pyramid-tier .tier-label{font-family:'Manrope',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gray);margin-bottom:.3rem}
+  .pyramid-tier h5{font-family:'Noto Serif SC',serif;font-size:1.05rem;font-weight:700;line-height:1.3;margin-bottom:.25rem}
+  .pyramid-tier p{font-size:.78rem;color:var(--ink-soft);line-height:1.5}
+  .py-t1{background:rgba(217,217,217,.4);width:40%;border:1px solid var(--gray-faint)}
+  .py-t2{background:rgba(46,89,132,.06);width:55%;border:1px solid var(--g2-border)}
+  .py-t3{background:rgba(46,89,132,.10);width:70%;border:1px solid var(--g2)}
+  .py-t4{background:var(--g2);color:var(--bg);width:88%}
+  .py-t4 .tier-label{color:rgba(255,255,255,.7)}
+  .py-t4 h5{color:var(--bg)}
+  .py-t4 p{color:rgba(255,255,255,.85)}
+  .py-base{background:var(--ink);color:var(--bg);width:100%;padding:1rem 1.5rem;text-align:center}
+  .py-base .label{font-family:'Manrope',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;margin-bottom:.4rem}
+  .py-base h5{font-family:'Noto Serif SC',serif;font-size:1.5rem;font-weight:900;color:var(--bg);margin-bottom:.25rem}
+  .py-base p{font-size:.82rem;color:rgba(255,255,255,.75)}
+
+  /* ═══ VALIDATION MATRIX 4 象限 ═══ */
+  .vmx{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin:1.5rem 0}
+  .vmx-cell{padding:1rem 1.25rem;border:1px solid;border-radius:6px}
+  .vmx-cell .head{font-family:'Manrope',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.04em;margin-bottom:.4rem}
+  .vmx-cell p{font-size:.85rem;color:var(--ink-soft);line-height:1.55}
+  .vmx-cell .num{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--gray);margin-top:.3rem;font-style:italic}
+  .vmx-y{background:rgba(74,124,89,.05);border-color:rgba(74,124,89,.18)} .vmx-y .head{color:var(--g3)}
+  .vmx-w{background:rgba(184,150,79,.04);border-color:rgba(184,150,79,.18)} .vmx-w .head{color:var(--gold)}
+  .vmx-r{background:rgba(192,57,43,.04);border-color:rgba(192,57,43,.18)} .vmx-r .head{color:var(--g1)}
+
+  /* ═══ CATEGORY MATRIX 16 场景 ═══ */
+  .cmx{margin:2rem 0}
+  .cmx-row{display:flex;align-items:stretch;gap:6px;margin-bottom:6px}
+  .cmx-level{width:80px;flex-shrink:0;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'Manrope',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-align:center;padding:8px 4px;line-height:1.4}
+  .cmx-items{flex:1;display:flex;flex-wrap:wrap;gap:6px}
+  .cmx-tag{font-size:.72rem;padding:6px 12px;border-radius:5px;line-height:1.5;border:1px solid transparent}
+  .cmx-tag .sub{display:block;font-size:.6rem;opacity:.65;margin-top:2px}
+  .cmx-section{font-family:'Manrope',sans-serif;font-size:.62rem;letter-spacing:.3em;color:var(--gray);margin:1.25rem 0 .5rem;text-transform:uppercase;font-weight:600}
+  .cmx-l-y{background:rgba(74,124,89,.15);color:var(--g3)} .cmx-t-y{background:rgba(74,124,89,.08);border-color:rgba(74,124,89,.22);color:var(--ink)}
+  .cmx-l-b{background:rgba(46,89,132,.15);color:var(--g2)} .cmx-t-b{background:rgba(46,89,132,.06);border-color:rgba(46,89,132,.18);color:var(--ink)}
+  .cmx-l-g{background:rgba(184,150,79,.12);color:var(--gold)} .cmx-t-g{background:rgba(184,150,79,.05);border-color:rgba(184,150,79,.15);color:var(--ink)}
+  .cmx-l-p{background:rgba(107,91,149,.12);color:var(--g4)} .cmx-t-p{background:rgba(107,91,149,.04);border-color:rgba(107,91,149,.15);color:var(--gray)}
+
+  /* ═══ VALUE LADDER ═══ */
+  .val-ladder{margin:2rem 0;border-top:1px solid var(--g2);border-bottom:1px solid var(--g2);background:var(--bg-card)}
+  .vl-row{display:grid;grid-template-columns:1fr 50px 1fr;border-bottom:1px solid var(--g2-border);padding:.9rem 1.2rem;align-items:center;font-size:.9rem}
+  .vl-row:last-child{border-bottom:none;background:var(--g2-soft)}
+  .vl-them{text-align:right;color:var(--gray);text-decoration:line-through;text-decoration-color:var(--gray-faint);padding-right:1rem}
+  .vl-arrow{text-align:center;color:var(--g2);font-style:italic;font-size:.75rem;font-family:'Manrope',sans-serif}
+  .vl-us{padding-left:1rem;font-weight:500;color:var(--ink)}
+  .vl-row:last-child .vl-them{color:var(--g2);text-decoration:none;font-weight:700} .vl-row:last-child .vl-us{color:var(--g2);font-weight:600} .vl-row:last-child .vl-arrow{color:var(--g2);font-size:.95rem}
+
+  /* ═══ ONE LINER ═══ */
+  .one-liner{text-align:center;padding:3rem 2rem;border:1px solid var(--g2);background:var(--g2-soft);margin:2.5rem 0}
+  .one-liner .label{font-family:'Manrope',sans-serif;font-size:.65rem;letter-spacing:.5em;color:var(--gray);margin-bottom:1rem;text-transform:uppercase;font-weight:600}
+  .one-liner .text{font-family:'Noto Serif SC',serif;font-size:clamp(1.1rem,2.4vw,1.55rem);font-weight:700;color:var(--g2);line-height:1.85}
+
+  /* ═══ SPECIES ═══ */
+  .species{border-top:1px solid var(--g2);border-bottom:1px solid var(--g2);margin:2rem 0;background:var(--bg-card)}
+  .sp-row{display:grid;grid-template-columns:240px 1fr;gap:2rem;padding:1.15rem 1.2rem;border-bottom:1px solid var(--g2-border);align-items:center}
+  .sp-row:last-child{border-bottom:none;background:var(--g2-soft)}
+  .sp-name{font-family:'Noto Sans SC',sans-serif;font-weight:600;font-size:1rem}
+  .sp-row:last-child .sp-name{color:var(--g2);font-weight:800}
+  .sp-gap{font-size:.9rem;color:var(--gray);line-height:1.5}
+  .sp-row:last-child .sp-gap{color:var(--ink);font-weight:500}
+
+  /* ═══ THREE LINKS ═══ */
+  .three-links{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin:2rem 0}
+  .link-card{background:var(--bg-card);border:1px solid var(--g3);border-top:4px solid var(--g3);padding:1.85rem 1.65rem;transition:all .35s ease}
+  .link-card:hover{transform:translateY(-3px);box-shadow:5px 5px 0 var(--g3-soft)}
+  .link-card .label{font-family:'Manrope',sans-serif;font-weight:700;font-size:.65rem;letter-spacing:.25em;color:var(--g3);text-transform:uppercase;margin-bottom:.85rem}
+  .link-card h4{font-family:'Noto Serif SC',serif;font-size:1.15rem;font-weight:700;line-height:1.45;margin-bottom:1rem}
+  .link-card ul{list-style:none;font-size:.88rem;line-height:1.85;color:var(--ink-soft)}
+  .link-card li{padding-left:1rem;position:relative}
+  .link-card li::before{content:'·';position:absolute;left:0;color:var(--g3);font-weight:700}
+  .link-card .footnote{margin-top:.85rem;font-size:.78rem;color:var(--gray);font-style:italic;line-height:1.6}
+
+  /* ═══ NINEGRID ═══ */
+  .ninegrid{display:grid;grid-template-columns:80px 1fr 1fr 1fr;gap:1px;background:var(--gray-faint);margin:2rem 0;border:1px solid var(--gray-faint)}
+  .ng-cell{background:var(--bg-card);padding:1rem;font-size:.78rem;line-height:1.8;color:var(--ink-soft)}
+  .ng-cell em{color:var(--g3);font-style:normal;font-weight:600}
+  .ng-h{background:rgba(74,124,89,.06);font-family:'Manrope',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.1em;color:var(--g3);display:flex;align-items:center;justify-content:center;text-align:center;text-transform:uppercase}
+  .ng-rl{background:rgba(74,124,89,.04);font-family:'Manrope',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.15em;display:flex;align-items:center;justify-content:center;text-align:center;writing-mode:vertical-lr;color:var(--g3)}
+
+  /* ═══ INCOME PYRAMID ═══ */
+  .pyramid-income{display:flex;flex-direction:column;align-items:center;gap:6px;margin:2rem 0;padding:2rem 0}
+  .pi-tier{border-radius:6px;padding:.85rem 1.5rem;text-align:center;transition:transform .25s ease}
+  .pi-tier:hover{transform:scale(1.02)}
+  .pi-tier h4{font-size:.95rem;font-weight:700;margin-bottom:.2rem;font-family:'Noto Serif SC',serif}
+  .pi-tier p{font-size:.78rem;line-height:1.55}
+  .pi-1{background:rgba(192,57,43,.12);border:1px solid rgba(192,57,43,.3);color:var(--ink);width:35%}
+  .pi-1 h4{color:var(--g1)}
+  .pi-2{background:rgba(74,124,89,.10);border:1px solid rgba(74,124,89,.25);color:var(--ink);width:50%}
+  .pi-2 h4{color:var(--g3)}
+  .pi-3{background:rgba(46,89,132,.08);border:1px solid rgba(46,89,132,.20);color:var(--ink);width:65%}
+  .pi-3 h4{color:var(--g2)}
+  .pi-4{background:rgba(107,91,149,.06);border:1px solid rgba(107,91,149,.15);color:var(--ink);width:80%}
+  .pi-4 h4{color:var(--g4)}
+  .pi-5{background:rgba(184,150,79,.05);border:1px solid rgba(184,150,79,.12);color:var(--ink);width:95%}
+  .pi-5 h4{color:var(--gold)}
+
+  /* ═══ FIVE LAYERS ═══ */
+  .layers-list{border-top:1px solid var(--g3);margin:2rem 0;background:var(--bg-card)}
+  .ly-row{display:grid;grid-template-columns:80px 220px 1fr 140px;gap:2rem;padding:2rem 1.2rem;border-bottom:1px solid var(--g3-border);align-items:start;transition:background .25s ease;border-left:4px solid transparent}
+  .ly-row:hover{background:var(--bg-alt)}
+  .ly-row.ly-primary{border-left-color:var(--g1);background:rgba(192,57,43,.04)}
+  .ly-row.ly-half{border-left-color:var(--gold);background:rgba(184,150,79,.05)}
+  .ly-row.ly-opp{border-left-color:var(--g2)}
+  .ly-row.ly-vision{border-left-color:var(--gray)}
+  .ly-row.ly-tools{border-left-color:var(--ink);background:rgba(15,15,15,.04)}
+  .ly-num{font-family:'Manrope',sans-serif;font-weight:200;font-size:2.4rem;line-height:1;color:var(--g3)}
+  .ly-name h3{font-family:'Noto Sans SC',sans-serif;font-weight:700;font-size:1.1rem;line-height:1.3;margin-bottom:.4rem}
+  .ly-name .en{font-family:'Manrope',sans-serif;font-weight:500;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gray)}
+  .ly-content{font-size:.92rem;line-height:1.65}
+  .ly-content .item{padding:.15rem 0}
+  .ly-content .item .name{font-weight:600}
+  .ly-content .item .detail{color:var(--gray);font-weight:300;margin-left:.4em;font-style:italic}
+  .ly-tags{display:flex;flex-direction:column;gap:.5rem;align-items:flex-end}
+  .ly-tag{font-family:'Manrope',sans-serif;font-weight:600;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;padding:.25rem .55rem;border:1px solid;white-space:nowrap}
+  .ly-tag.real{color:var(--g1);border-color:var(--g1)} .ly-tag.half{color:var(--gold);border-color:var(--gold)}
+  .ly-tag.opp{color:var(--g2);border-color:var(--g2)} .ly-tag.zero{color:var(--gray);border-color:var(--gray)}
+  .ly-tag.cross{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+  /* ═══ FUNNEL 3-LAYER ═══ */
+  .funnel-3{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--g3);margin:2rem 0;background:var(--bg-card)}
+  .fn-col{padding:1.75rem 1.5rem;border-right:1px solid var(--g3-border)}
+  .fn-col:last-child{border-right:none}
+  .fn-col.l1{background:var(--bg-alt)}
+  .fn-col.l2{background:rgba(184,150,79,.07)}
+  .fn-col.l3{background:rgba(74,124,89,.08)}
+  .fn-step{font-family:'Manrope',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.2em;color:var(--gray);text-transform:uppercase;margin-bottom:.85rem}
+  .fn-form{font-family:'Noto Serif SC',serif;font-weight:700;font-size:1.15rem;margin-bottom:.65rem;line-height:1.4}
+  .fn-col.l2 .fn-form{color:var(--gold)} .fn-col.l3 .fn-form{color:var(--g3)}
+  .fn-col h4{font-family:'Noto Sans SC',sans-serif;font-weight:700;font-size:.95rem;margin-bottom:.5rem}
+  .fn-col .what{font-size:.82rem;color:var(--ink-soft);line-height:1.5;margin-bottom:.7rem}
+  .fn-col .defends{font-size:.75rem;font-style:italic;color:var(--gray);border-top:1px dotted var(--gray-faint);padding-top:.6rem}
+
+  /* ═══ BAYESIAN ═══ */
+  .bayes{display:grid;grid-template-columns:repeat(4,1fr);gap:.85rem;margin:2rem 0}
+  .bayes-tier{background:var(--bg-card);border:1px solid var(--g3-border);padding:1.35rem 1.15rem;text-align:center;transition:all .25s ease}
+  .bayes-tier:hover{border-color:var(--g3)}
+  .bayes-tier .grade{font-family:'Manrope',sans-serif;font-weight:800;font-size:1.85rem;color:var(--g3);margin-bottom:.45rem;letter-spacing:.05em}
+  .bayes-tier .lvl{font-family:'Manrope',sans-serif;font-weight:600;font-size:.65rem;letter-spacing:.2em;color:var(--g3);text-transform:uppercase;margin-bottom:.6rem}
+  .bayes-tier p{font-size:.78rem;color:var(--ink-soft);line-height:1.55}
+  .bayes-tier.s-tier{border-color:var(--g3);background:var(--g3-soft)}
+
+  /* ═══ KPI CARDS ═══ */
+  .kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin:2rem 0}
+  .kpi-card{background:var(--bg-card);border:1px solid var(--gray-faint);padding:1.5rem 1rem;text-align:center}
+  .kpi-num{font-family:'Manrope',sans-serif;font-weight:800;font-size:1.85rem;color:var(--g3);margin-bottom:.25rem}
+  .kpi-label{font-size:.7rem;color:var(--gray);font-family:'Manrope',sans-serif;letter-spacing:.1em;text-transform:uppercase}
+  .kpi-note{text-align:center;font-size:.75rem;color:var(--gray);font-style:italic;margin-top:.5rem;font-family:'Noto Serif SC',serif}
+
+  /* ═══ ANCHOR (2026 着力点) ═══ */
+  .anchor-2026{margin:3rem 0;padding:2.5rem 2.5rem;border:2px solid var(--g3);background:var(--bg-card);position:relative}
+  .anchor-2026::before{content:'2026 ANCHOR';position:absolute;top:-.65rem;left:1.5rem;background:var(--bg);color:var(--g3);font-family:'Manrope',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.25em;padding:0 .6rem}
+  .anchor-2026 h4{font-family:'Noto Serif SC',serif;font-weight:700;font-size:1.5rem;margin-bottom:1.5rem;color:var(--g3)}
+  .anchor-list{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+  .anchor-item{padding:1rem 1.25rem;background:var(--g3-soft);border-left:3px solid var(--g3)}
+  .anchor-item .label{font-family:'Manrope',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.2em;color:var(--g3);text-transform:uppercase;margin-bottom:.4rem}
+  .anchor-item p{font-size:.92rem;color:var(--ink);line-height:1.55}
+
+  /* ═══ FOUR DIM ═══ */
+  .four-dim{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin:2rem 0}
+  .dim-card{background:var(--bg-card);border:1px solid var(--g4-border);padding:1.65rem 1.35rem;text-align:center;transition:all .35s ease}
+  .dim-card:hover{border-color:var(--g4);transform:translateY(-2px)}
+  .dim-card .glyph{font-family:'Noto Serif SC',serif;font-size:2.25rem;color:var(--g4);font-weight:900;margin-bottom:.45rem;line-height:1}
+  .dim-card .desc{font-size:.78rem;color:var(--ink-soft);margin-bottom:.85rem;line-height:1.55}
+  .dim-card .score{font-family:'Manrope',sans-serif;font-size:.7rem;color:var(--g4);letter-spacing:.05em;font-weight:700}
+  .dim-card .score.bold{color:var(--g1)}
+
+  /* ═══ DIRECTION CHANGE TABLE ═══ */
+  .dirtable{margin:2rem 0;border-top:1px solid var(--g4);border-bottom:1px solid var(--g4);background:var(--bg-card)}
+  .dirrow{display:grid;grid-template-columns:140px 1fr 1fr;border-bottom:1px solid var(--g4-border);align-items:stretch}
+  .dirrow:last-child{border-bottom:none}
+  .dirrow > div{padding:.95rem 1.2rem;font-size:.9rem;line-height:1.55}
+  .dirrow.h{background:var(--g4-soft);border-bottom:1px solid var(--g4)}
+  .dirrow.h > div{font-family:'Manrope',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.2em;color:var(--g4);text-transform:uppercase}
+  .dirrow .dim{font-family:'Manrope',sans-serif;font-weight:700;font-size:.78rem;color:var(--gray);letter-spacing:.04em;text-transform:uppercase;background:var(--bg-alt)}
+  .dirrow .v7{color:var(--gray);font-style:italic}
+  .dirrow .v8{color:var(--ink);font-weight:500}
+  .dirrow .v8 strong{color:var(--g4);font-weight:700}
+
+  /* ═══ ACCORDION (16+1 控制点) ═══ */
+  .ctrl-section-label{font-family:'Manrope',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.3em;color:var(--g4);margin:2rem 0 .85rem;text-transform:uppercase}
+  .ctrl-section-label.implants{color:var(--g3)} .ctrl-section-label.entry{color:var(--g2)} .ctrl-section-label.exit{color:var(--g1)}
+  .acc-item{border:1px solid var(--gray-faint);margin-bottom:4px;overflow:hidden;transition:all .3s;background:var(--bg-card)}
+  .acc-head{display:flex;align-items:center;gap:12px;padding:14px 18px;cursor:pointer;transition:background .3s}
+  .acc-head:hover{background:var(--bg-alt)}
+  .acc-code{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Manrope',sans-serif;font-size:.65rem;font-weight:700;color:#fff;flex-shrink:0;letter-spacing:.05em}
+  .acc-code.virtual{background:var(--g4)} .acc-code.implants{background:var(--g3)}
+  .acc-code.entry{background:var(--g2)} .acc-code.exit{background:var(--g1)}
+  .acc-head h5{font-family:'Noto Sans SC',sans-serif;font-size:.92rem;font-weight:500;flex:1;line-height:1.4}
+  .acc-head h5 .score{color:var(--gray);font-size:.78rem;margin-left:.5em;font-family:'JetBrains Mono',monospace;letter-spacing:.04em}
+  .acc-head h5 .star{color:var(--g1);font-weight:700;margin-left:.3em}
+  .acc-toggle{margin-left:auto;font-size:9px;color:var(--gray);transition:transform .3s}
+  .acc-body{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s}
+  .acc-body p{font-size:.85rem;color:var(--ink-soft);line-height:1.85;margin-bottom:.5rem}
+  .acc-body p:last-child{margin-bottom:0}
+  .acc-body em{color:var(--g4);font-weight:500}
+  .acc-item.open .acc-body{max-height:500px;padding:0 18px 16px 62px}
+  .acc-item.open .acc-toggle{transform:rotate(180deg)}
+  .acc-item.highlight{border-color:var(--g1);background:rgba(192,57,43,.02)}
+  .acc-item.highlight .acc-head h5{font-weight:700}
+
+  /* ═══ SCORECARD ═══ */
+  .scorecard{margin:2.5rem 0;padding:2rem;background:var(--bg-card);border:1px solid var(--gray-faint)}
+  .scorecard-title{text-align:center;font-family:'Manrope',sans-serif;font-size:.7rem;font-weight:700;color:var(--gray);letter-spacing:.3em;text-transform:uppercase;margin-bottom:1.5rem}
+  .scorecard-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:center}
+  .scorecard-bars > div{margin-bottom:14px}
+  .sb-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+  .sb-name{font-size:.82rem;font-weight:600}
+  .sb-name.virtual{color:var(--g4)} .sb-name.implants{color:var(--g3)}
+  .sb-name.entry{color:var(--g2)} .sb-name.exit{color:var(--g1)}
+  .sb-num{font-family:'Manrope',sans-serif;font-size:.85rem;font-weight:700}
+  .sb-num.virtual{color:var(--g4)} .sb-num.implants{color:var(--g3)}
+  .sb-num.entry{color:var(--g2)} .sb-num.exit{color:var(--g1)}
+  .sb-bar{height:5px;background:var(--gray-faint);border-radius:2px;overflow:hidden}
+  .sb-fill{height:100%;border-radius:2px;transition:width .8s cubic-bezier(.16,1,.3,1)}
+  .sb-fill.virtual{background:var(--g4)} .sb-fill.implants{background:var(--g3)}
+  .sb-fill.entry{background:var(--g2)} .sb-fill.exit{background:var(--g1)}
+  .sb-detail{font-size:.7rem;color:var(--gray);margin-top:3px;font-style:italic;line-height:1.5}
+  .total-score{text-align:center;font-family:'Noto Serif SC',serif;color:var(--accent);font-weight:600;font-size:.92rem;margin-top:1.5rem;padding-top:1.5rem;border-top:1px dashed var(--gray-faint)}
+  .total-score em{color:var(--g4);font-style:normal;font-weight:700}
+
+  /* ═══ CLOSING ═══ */
+  .closing{padding:6rem 2rem 4rem;text-align:center;max-width:820px;margin:0 auto;scroll-margin-top:64px}
+  .closing-eyebrow{font-family:'Manrope',sans-serif;font-size:.65rem;letter-spacing:.55em;color:var(--gray);margin-bottom:1.5rem;text-transform:uppercase;font-weight:600}
+  .closing h2{font-family:'Noto Serif SC',serif;font-size:clamp(1.85rem,4vw,2.65rem);font-weight:900;line-height:1.4;margin-bottom:1rem;color:var(--ink);letter-spacing:-.015em}
+  .closing h2 em{color:var(--accent);font-style:italic}
+  .closing-deck{font-family:'Noto Serif SC',serif;font-size:1rem;color:var(--gray);line-height:1.85;margin-bottom:3rem}
+
+  .closing-pair{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:2.5rem 0}
+  .closing-side{padding:2rem 1.5rem;border:1px solid var(--ink);background:var(--bg-card);text-align:left}
+  .closing-side .label{font-family:'Manrope',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.3em;color:var(--accent);margin-bottom:.85rem;text-transform:uppercase}
+  .closing-side h4{font-family:'Noto Serif SC',serif;font-weight:700;font-size:1.25rem;margin-bottom:.85rem}
+  .closing-side ul{list-style:none;font-size:.88rem;line-height:1.85;color:var(--ink-soft)}
+  .closing-side li{padding-left:1rem;position:relative}
+  .closing-side li::before{content:'·';position:absolute;left:0;color:var(--accent);font-weight:700}
+
+  .vision-paint{padding:3rem 2rem;background:var(--bg-card);border:1px solid var(--gray-faint);margin:3rem 0;text-align:left}
+  .vision-paint .label{font-family:'Manrope',sans-serif;font-size:.65rem;letter-spacing:.5em;color:var(--gray);text-transform:uppercase;font-weight:600;margin-bottom:1.25rem;text-align:center}
+  .vision-paint p{font-family:'Noto Serif SC',serif;font-size:.95rem;line-height:2.1;color:var(--ink-soft);margin-bottom:1rem}
+  .vision-paint p em{color:var(--accent);font-style:italic;font-weight:500}
+  .vision-paint p strong{color:var(--ink);font-weight:600}
+  .vision-paint p:last-child{margin-bottom:0}
+
+  .closing-tail{font-family:'Noto Serif SC',serif;font-size:1.05rem;color:var(--ink);font-weight:600;margin:3rem 0 1.5rem;line-height:1.85;font-style:italic}
+  .closing-tail em{color:var(--accent);font-style:italic}
+
+  .closing-final{font-family:'Noto Serif SC',serif;font-size:clamp(1.4rem,3vw,1.85rem);font-weight:700;color:var(--accent);line-height:1.7;padding:2.5rem 1.5rem;border-top:2px solid var(--accent);border-bottom:2px solid var(--accent);margin:2.5rem 0;letter-spacing:.02em}
+
+  /* ═══ FOOTER ═══ */
+  footer{text-align:center;padding:2.5rem 2rem 1.5rem;font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--gray);letter-spacing:.18em;border-top:1px solid var(--gray-faint);text-transform:uppercase;line-height:2}
+  footer .accent{color:var(--accent)}
+  footer .dot{margin:0 .65em;color:var(--accent)}
+  .colophon-note{max-width:780px;margin:1rem auto 0;padding-top:1.5rem;border-top:1px dotted var(--gray-faint);font-family:'Noto Serif SC',serif;font-size:.78rem;color:var(--gray);font-style:italic;line-height:1.85;letter-spacing:0;text-transform:none;text-align:left}
+
+  /* ═══ ANIMATIONS ═══ */
+  .r{opacity:0;transform:translateY(16px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+  .r.v{opacity:1;transform:none}
+  .d1{transition-delay:.1s} .d2{transition-delay:.2s} .d3{transition-delay:.3s}
+  @media(prefers-reduced-motion:reduce){.r{opacity:1;transform:none;transition:none}}
+
+  /* ═══ RESPONSIVE ═══ */
+  @media(max-width:1024px){
+    section{padding:0 2rem}
+    .grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
+    .ab-frame{grid-template-columns:120px 1fr 1fr;font-size:.85rem}
+    .four-word{grid-template-columns:repeat(2,1fr)}
+    .profile-row{grid-template-columns:1fr}
+    .profile-row .key{border-right:none;border-bottom:1px solid var(--g2-border)}
+    .vmx{grid-template-columns:1fr}
+    .three-links{grid-template-columns:1fr}
+    .ninegrid{grid-template-columns:1fr}
+    .ng-rl{writing-mode:horizontal-tb;padding:.6rem;justify-content:flex-start}
+    .ly-row{grid-template-columns:50px 1fr}
+    .ly-name{grid-column:2}
+    .ly-content,.ly-tags{grid-column:1/-1;padding-left:65px}
+    .ly-tags{flex-direction:row;align-items:flex-start}
+    .funnel-3{grid-template-columns:1fr}
+    .fn-col{border-right:none;border-bottom:1px solid var(--g3-border)}
+    .bayes,.four-dim,.kpi{grid-template-columns:repeat(2,1fr)}
+    .anchor-list{grid-template-columns:1fr}
+    .dirrow{grid-template-columns:1fr}
+    .scorecard-grid{grid-template-columns:1fr}
+    .closing-pair{grid-template-columns:1fr}
+    .vl-row{grid-template-columns:1fr}
+    .vl-them{text-align:left;padding:0;text-decoration:none;opacity:.55}
+    .vl-arrow{text-align:left;padding:0}
+    .vl-us{padding:0}
+    .sp-row{grid-template-columns:1fr;gap:.5rem}
+    .pyramid-tier,.pi-tier{width:90% !important}
+  }
+  @media(max-width:640px){
+    section{padding:0 1.25rem}
+    .gh{padding:4rem 1rem 2rem}
+    .four-word,.bayes,.four-dim,.kpi{grid-template-columns:1fr}
+  }
+
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-badge r">NARRATIVE STRATEGY MAP <span class="dot">·</span> RUIFANG V2 <span class="dot">·</span> FULL MODULE</div>
+  <h1 class="r d1">范瑞芳<br>安全价值证明<span class="accent">创业通关地图</span></h1>
+  <p class="hero-sub r d2">从高耗能执行者，通关为安全价值证明的系统设计者。<br><span class="line2">把“复杂信息结构化、客户真实任务、天津样板、年度托管、超级壁垒”整合成一条可验证的创业路线。</span></p>
+  <div class="hero-formula r d3">财富 <span class="x">=</span> 借势 <span class="x">×</span> 合力</div>
+  <div class="hero-meta r d3">SEALED 2026-06-01 <span class="dot">·</span> COMPANY BRAIN × FULL MODULE DIAGNOSIS × TIANJIN SAMPLE</div>
+  <div class="hero-scroll">向下探索 ↓</div>
+</header>
+
+<nav class="navbar">
+  <a href="#intro">借势合力</a>
+  <a href="#gate1">觉醒</a>
+  <a href="#gate2">品类</a>
+  <a href="#gate3">模式</a>
+  <a href="#gate4">壁垒</a>
+  <a href="#closing">远方</a>
+</nav>
+
+<section id="intro">
+  <div class="intro-wrap">
+    <p class="intro-tag r">PROLOGUE · 借势合力</p>
+    <h2 class="intro-title r">真正的通关，不是更忙，而是让原力离开本人也能运转</h2>
+    <p class="intro-deck r d1">这张 V2 地图把企业大脑输出、战略洞察报告、创业通关地图，以及新增的全模块诊断合并到同一张 H5。核心判断升级为：瑞芳不是缺方向，而是站在“个人能力强、结构沉淀弱”的关口，必须把天津样板做成安全价值证明品类的第一作品。</p>
+    <div class="intro-grid">
+      <div class="intro-card r">
+        <p class="label">借势 · BORROWING MOMENTUM</p>
+        <h4>安全事件、国债投入、AI 落地和主官问责共同打开窗口</h4>
+        <p>用户痛感不是“想买一个系统”，而是钱已经花了、设备已经布了，却无法证明风险真的被提前识别、伤亡真的被减少、管理能力真的被承认。</p>
+        <p class="footnote">借势不是追热点，而是快过用户痛感消退的速度，把短窗口刚需压成可汇报证据。</p>
+      </div>
+      <div class="intro-card r d1">
+        <p class="label">合力 · COMBINING FORCES</p>
+        <h4>个人结构化能力、辰安平台、天津现场和客户信任合成第一作品</h4>
+        <p>瑞芳的原力是把混沌信息加工成有序系统，再转译成客户能理解、组织能采纳、市场能购买的决策支持。</p>
+        <p class="footnote">合力的关键不是把所有资源都拿来，而是让每个资源只服务同一个命题：安全价值证明。</p>
+      </div>
+      <div class="intro-card r d2">
+        <p class="label">瓶颈 · BOTTLENECK</p>
+        <h4>前链路强，后链路脆，财链路未固化</h4>
+        <p>客户愿意付钱、愿意转介绍，但交付高度依赖瑞芳本人，最卡的是“痛点把握”无法标准化，导致产能天花板、边际成本和团队独立交付同时受限。</p>
+        <p class="footnote">这不是增长问题，而是结构问题；先重构系统，再放大流量。</p>
+      </div>
+      <div class="intro-card r d3">
+        <p class="label">闭环 · FIRST LOOP</p>
+        <h4>7–14 天先验证三个信号，不再无限打磨</h4>
+        <p>向 3 个老客户测试“合规风险托管”新话术；让 1 名团队成员用需求诊断清单做一次真实调研；向 3 个客户试销年度应急管理托管服务包。</p>
+        <p class="footnote">行为大于反馈，签约大于认可；最快验证的人，才真正进入创业。</p>
+      </div>
+    </div>
+    <div class="qb r">
+      <p>“她的核心不是会写材料，而是在应急领域把复杂问题拆解成有序系统；下一步要把这件事从个人能力，沉淀成团队和客户都能复用的系统。”</p>
+      <cite>— 全模块诊断综合判断</cite>
+    </div>
+    <div class="key-judge r"><strong>总控判断：</strong>如果天津只被当作项目，瑞芳收获的是案例；如果天津被设计成“安全价值证明”的第一作品，瑞芳收获的是一个可产品化、可授权、可复制、可谈组织边界的战略资产。</div>
+  </div>
+</section>
+
+<div class="sep">· · · · ·</div>
+
+<div class="gh g1 r" id="gate1">
+  <div class="gh-num">GATE 01</div>
+  <h2>原力觉醒</h2>
+  <div class="gh-rule"></div>
+  <p>我是谁：三圈交集，把个人能力变成持续创业输入端</p>
+</div>
+
+<section>
+  <div class="grid grid-4">
+    <div class="card g1 r">
+      <div class="tag">三圈交集 · 痴迷</div>
+      <h3>复杂问题结构化会补能</h3>
+      <p>搭建基础业务框架后更清醒，连续 3 小时仍像刚进入状态，一个月不做会烦躁。这里不是自律，而是能量结构。</p>
+    </div>
+    <div class="card g1 r d1">
+      <div class="tag">三圈交集 · 优势</div>
+      <h3>非对称优势：决策支持</h3>
+      <p>输入大量信息，经由人脑加工分析，输出相对有序的逻辑；外界最常问“你怎么想到的”，而不是“你怎么坚持的”。</p>
+    </div>
+    <div class="card g1 r d2">
+      <div class="tag">三圈交集 · 回报</div>
+      <h3>非线性回报：系统复利</h3>
+      <p>如果“需求把握”能沉淀成清单、SOP、案例库和价值账本，同一套能力就能被团队、客户和伙伴反复调用。</p>
+    </div>
+    <div class="card g1 r d3">
+      <div class="tag">阴影 → 超能力</div>
+      <h3>怕被质疑无价值，所以最会做价值显影</h3>
+      <p>阴影不是要消灭，而是转成职业能力：让预防价值、复杂治理和长期安全投入变得可感、可算、可讲。</p>
+    </div>
+  </div>
+
+  <div class="ab-frame r">
+    <div class="h">维度</div><div class="h ha">普通项目角色</div><div class="h hb">创业者角色</div>
+    <div class="dim">身份</div><div>B 层级高耗能执行者：高能量投入，但结构沉淀不足</div><div>系统设计者：把个人判断装进可复制工具</div>
+    <div class="dim">产出</div><div>规划、方案、汇报稿、产品建议</div><div>诊断清单、解决方案库、价值账本、年度托管包</div>
+    <div class="dim">位置</div><div>在客户与厂商之间补洞</div><div>在用户任务、组织资源、商业模式和护城河之间搭系统</div>
+  </div>
+
+  <div class="case-box r">
+    <h4>原力命名：复杂信息结构化 × 应急范式变革</h4>
+    <p class="case-quote">“推动应急管理的快速变革，是她真正离开六个月后会被延后的事。”</p>
+    <p>这句话暴露了使命，也暴露了风险：使命还锁在个人在场里。通关第一步不是再接更多项目，而是把“复杂信息结构化”变成可训练、可交付、可复盘的系统。</p>
+    <p class="meaning">创业含义：从“只有我能做”升级为“我定义系统，别人也能做 80%”。</p>
+  </div>
+
+  <div class="ab-underline r"><strong>Gate 1 结论：</strong>瑞芳的原力不是“会写报告”，而是“把混沌的安全问题变成有序的决策系统”；创业的第一关，是把这个原力从本人身上拆出来。</div>
+</section>
+
+<div class="sep">· · · · ·</div>
+
+<div class="gh g2 r" id="gate2">
+  <div class="gh-num">GATE 02</div>
+  <h2>品类独创</h2>
+  <div class="gh-rule"></div>
+  <p>我为谁：三角定位，让市场承认一个新问题和新预算</p>
+</div>
+
+<section>
+  <div class="four-word r">
+    <div class="word-card"><div class="word">真用户</div><p>应急局局长/政府处长：项目已交账，仍怕“钱花了但没用”。</p></div>
+    <div class="word-card"><div class="word">真任务</div><p>提前识别风险、降低误报、减少事故伤亡，并能向上级讲清楚。</p></div>
+    <div class="word-card"><div class="word">真焦虑</div><p>不是怕买错产品，而是怕被质疑管理能力、被追责、被同行比下去。</p></div>
+    <div class="word-card"><div class="word">真品类</div><p>安全价值证明：把硬件、平台和 AI 变成可汇报的治理价值证据。</p></div>
+  </div>
+
+  <div class="profile r">
+    <div class="profile-row"><div class="key">SWEET USER</div><div class="val"><strong>第一甜用户：</strong>刚完成国债/硬件/平台交付，却仍要证明“这些投入真的能提前发现风险”的应急管理负责人。</div></div>
+    <div class="profile-row"><div class="key">PAIN</div><div class="val">摄像头和监测设备已经布设，但无法确认位置是否真的覆盖风险点；数据误报率高，项目容易变成“有投入、无价值感”。</div></div>
+    <div class="profile-row"><div class="key">JOB TO BE DONE</div><div class="val">在突发事件、上级追责和党委会质询之前，拿出一套能证明“风险识别前置、响应更快、工作有抓手”的证据系统。</div></div>
+    <div class="profile-row"><div class="key">WHY RUIFANG</div><div class="val">她不是只懂产品，而是能共情客户处境，把客户说不清的焦虑翻译成风险本体、价值量化和管理闭环。</div></div>
+  </div>
+
+  <div class="pyramid-wrap r">
+    <div class="pyramid">
+      <div class="pyramid-tier py-t1"><div class="tier-label">FUNCTIONAL</div><h5>让设备真正发挥作用</h5><p>位置合理、风险可识别、误报可下降、闭环可追踪。</p></div>
+      <div class="pyramid-tier py-t2"><div class="tier-label">EMOTIONAL</div><h5>让负责人睡得着</h5><p>摆脱“花了钱却说不出效果”的焦虑。</p></div>
+      <div class="pyramid-tier py-t3"><div class="tier-label">SOCIAL</div><h5>让上级和业务部门认可</h5><p>面对党委会和上级追责时，有共同语言和硬证据。</p></div>
+      <div class="pyramid-tier py-t4"><div class="tier-label">INVESTMENT</div><h5>让后续预算有理由</h5><p>从一次性交账，升级为年度安全价值复盘和持续投入。</p></div>
+      <div class="py-base"><div class="label">CATEGORY BASE</div><h5>安全价值证明</h5><p>帮应急负责人把已经投入的硬件、平台和 AI，变成能提前识别风险、减少伤亡、向上汇报的价值证据系统。</p></div>
+    </div>
+  </div>
+
+  <div class="val-ladder r">
+    <div class="vl-row"><div class="vl-them">卖系统</div><div class="vl-arrow">→</div><div class="vl-us">帮客户完成合规任务并避免问责</div></div>
+    <div class="vl-row"><div class="vl-them">解释功能</div><div class="vl-arrow">→</div><div class="vl-us">证明硬件位置、数据质量和风险闭环有效</div></div>
+    <div class="vl-row"><div class="vl-them">做材料</div><div class="vl-arrow">→</div><div class="vl-us">给主官一套可复述、可汇报、可传承的话语系统</div></div>
+    <div class="vl-row"><div class="vl-them">做项目</div><div class="vl-arrow">→</div><div class="vl-us">沉淀样板案例、需求诊断和年度价值账本</div></div>
+  </div>
+
+  <div class="one-liner r"><div class="label">KILLER ONE-LINER</div><div class="text">安全价值证明，是帮应急管理负责人把“已经投入的钱和设备”，变成能提前识别风险、减少伤亡、向上汇报的价值证据系统。</div></div>
+
+  <div class="species r">
+    <div class="sp-row"><div class="sp-name">信息化供应商</div><div class="sp-gap">被放进 IT/政府采购账户，容易被比价、比功能。</div></div>
+    <div class="sp-row"><div class="sp-name">咨询顾问</div><div class="sp-gap">能讲逻辑，但交付常依赖专家本人，难以进入持续运营。</div></div>
+    <div class="sp-row"><div class="sp-name">AI 应用团队</div><div class="sp-gap">擅长模型和功能，但容易离真实风险、本体和问责场景太远。</div></div>
+    <div class="sp-row"><div class="sp-name">安全价值证明</div><div class="sp-gap">进入“避免下一次重大安全事故的保险费/决策安全感预算”账户，卖的是任务达成、风险降低和管理可见性。</div></div>
+  </div>
+
+  <div class="key-judge r"><strong>Gate 2 结论：</strong>新品类要避开“应急 AI 解决方案”的红海标签，站到“风险提前识别 + 投入价值可证 + 管理能力被承认”的购买理由上。</div>
+</section>
+
+<div class="sep">· · · · ·</div>
+
+<div class="gh g3 r" id="gate3">
+  <div class="gh-num">GATE 03</div>
+  <h2>模式升维</h2>
+  <div class="gh-rule"></div>
+  <p>我怎么赚：三链贯通，把作品变成可持续商业系统</p>
+</div>
+
+<section>
+  <div class="three-links r">
+    <div class="link-card"><p class="label">前链路 · 强</p><h4>真痛点、真口碑、真转介绍已经存在</h4><ul><li>熟人推荐 1–3 次触达即可成交</li><li>客户认可专业、省心、降风险</li><li>天津逻辑已进入党委会正向反馈</li></ul><p class="footnote">前链路不是当前最大瓶颈，盲目扩获客会透支交付。</p></div>
+    <div class="link-card"><p class="label">后链路 · 脆</p><h4>核心交付锁死在创始人大脑中</h4><ul><li>痛点把握最卡、最耗时、最难标准化</li><li>团队独立交付率不足</li><li>离开 60 天交付质量显著下降</li></ul><p class="footnote">第一升级对象不是产品功能，而是需求诊断和方案生成能力。</p></div>
+    <div class="link-card"><p class="label">财链路 · 未固化</p><h4>定价权存在，但尚未转成持续收入</h4><ul><li>涨价后留下的客户质量更高</li><li>项目制让收入不可预测</li><li>年度托管和价值账本尚待验证</li></ul><p class="footnote">从卖能力转向卖结果，从一次性交付转向持续性关系。</p></div>
+  </div>
+
+  <div class="grid grid-3">
+    <div class="card g3 r"><div class="tag">FL-VP-08</div><h3>任务达成</h3><p>把服务包装为“合规风险托管”：帮客户完成 X 项合规任务，提供 Y 次应急响应，而不是卖系统或咨询。</p></div>
+    <div class="card g3 r d1"><div class="tag">BL-KA-32</div><h3>问题解决</h3><p>把过去 20 个项目的痛点剖析过程，提炼成 20–30 个标准问题的《需求诊断清单》。</p></div>
+    <div class="card g3 r d2"><div class="tag">BL-KR-28</div><h3>知识资产</h3><p>录制 3 次完整需求调研，复盘为《需求调研 SOP》和《常见场景解决方案库》。</p></div>
+    <div class="card g3 r"><div class="tag">FL-RS-40</div><h3>订阅费</h3><p>设计年度应急管理托管服务包：月度巡检、季度演练、应急热线、年度合规报告。</p></div>
+    <div class="card g3 r d1"><div class="tag">BL-KP-36</div><h3>伙伴产能</h3><p>与 1–2 家技术团队建立战略合作，把标准化实施能力绑定到方法论和项目分成中。</p></div>
+    <div class="card g3 r d2"><div class="tag">MVP MOLECULE</div><h3>混合收费</h3><p>年度订阅费 + 项目制增值费 + 客户细分定价，让财链路开始摆脱纯项目制。</p></div>
+  </div>
+
+  <div class="ninegrid r">
+    <div class="ng-h"></div><div class="ng-h">问题验证</div><div class="ng-h">方案验证</div><div class="ng-h">付费验证</div>
+    <div class="ng-rl">客户</div><div class="ng-cell"><em>已验证：</em>天津核心决策层认可项目逻辑，基层科员也认为清晰逻辑让工作更有价值。</div><div class="ng-cell"><em>待压缩：</em>用 PPT/Figma 先做可视化，不开发完整工具。</div><div class="ng-cell"><em>关键实验：</em>防汛/危化场景直接提出小额付费方案。</div>
+    <div class="ng-rl">团队</div><div class="ng-cell"><em>已识别：</em>交付过重来自用户任务梳理不清，产品无法标准化。</div><div class="ng-cell"><em>待验证：</em>1 名成员用诊断清单做真实调研，遗漏关键需求 ≤ 2 个。</div><div class="ng-cell"><em>成功信号：</em>客户满意度 ≥ 8 分，瑞芳不必重做核心判断。</div>
+    <div class="ng-rl">商业</div><div class="ng-cell"><em>已验证：</em>涨价后客户质量更高，说明定价权部分存在。</div><div class="ng-cell"><em>待验证：</em>年度应急管理托管是否可被接受。</div><div class="ng-cell"><em>成功信号：</em>3 个老客户中至少 1 个愿意签年度服务。</div>
+  </div>
+
+  <div class="dirtable r">
+    <div class="dirrow h"><div>7–14 天闭环</div><div>成功标准</div><div>失败后调整</div></div>
+    <div class="dirrow"><div class="dim">话术验证</div><div class="v7">向 3 个老客户测试“合规风险托管服务”，至少 2 个出现续约/转介绍兴趣。</div><div class="v8">若无正反馈，回到“避免问责/风险降低”而非“任务达成”。</div></div>
+    <div class="dirrow"><div class="dim">清单验证</div><div class="v7">团队成员独立调研后，瑞芳审核遗漏关键需求 ≤ 2 个，客户满意 ≥ 8 分。</div><div class="v8">若失败，先补“需求调研示范视频”，再扩大到全团队。</div></div>
+    <div class="dirrow"><div class="dim">订阅验证</div><div class="v7">3 个老客户中至少 1 个愿意签年度托管，价格为原项目制费用 60–70%/年。</div><div class="v8">若 0 签约，拆成季度订阅或降低到 50%/年验证门槛。</div></div>
+  </div>
+
+  <div class="pyramid-income r">
+    <div class="pi-tier pi-1"><h4>S 层：品类资产</h4><p>安全价值证明标准、课程、认证、指标数据库。</p></div>
+    <div class="pi-tier pi-2"><h4>A 层：年度托管</h4><p>风险巡检、季度演练、价值账本、年度合规报告。</p></div>
+    <div class="pi-tier pi-3"><h4>B 层：标准诊断</h4><p>需求诊断清单、场景解决方案库、价值量化报告。</p></div>
+    <div class="pi-tier pi-4"><h4>C 层：项目增值</h4><p>防汛、危化、单场所等具体场景的定制化增值交付。</p></div>
+    <div class="pi-tier pi-5"><h4>底座：真实项目理解</h4><p>来自天津、国债项目、硬件布设、风险本体和客户现场。</p></div>
+  </div>
+
+  <div class="layers-list r">
+    <div class="ly-row ly-primary"><div class="ly-num">01</div><div class="ly-name"><h3>主线资源</h3><div class="en">PRIMARY</div></div><div class="ly-content"><div class="item"><span class="name">天津样板：</span><span class="detail">所有表达、产品和商业验证都围绕第一作品展开。</span></div></div><div class="ly-tags"><span class="ly-tag real">REAL</span></div></div>
+    <div class="ly-row ly-half"><div class="ly-num">02</div><div class="ly-name"><h3>半衰资源</h3><div class="en">HALF-LIFE</div></div><div class="ly-content"><div class="item"><span class="name">需求把握：</span><span class="detail">从“顺感觉”沉淀为诊断清单、SOP、方案库。</span></div></div><div class="ly-tags"><span class="ly-tag half">COMPOUND</span></div></div>
+    <div class="ly-row ly-opp"><div class="ly-num">03</div><div class="ly-name"><h3>机会资源</h3><div class="en">OPPORTUNITY</div></div><div class="ly-content"><div class="item"><span class="name">防汛/危化窗口：</span><span class="detail">先在两个政府监管场景中把风险本体落实到具体事故类型。</span></div></div><div class="ly-tags"><span class="ly-tag opp">WINDOW</span></div></div>
+    <div class="ly-row ly-vision"><div class="ly-num">04</div><div class="ly-name"><h3>愿景资源</h3><div class="en">VISION</div></div><div class="ly-content"><div class="item"><span class="name">年度价值账本：</span><span class="detail">把一次报告变成持续复盘、续约和组织共同语言。</span></div></div><div class="ly-tags"><span class="ly-tag zero">VISION</span></div></div>
+    <div class="ly-row ly-tools"><div class="ly-num">05</div><div class="ly-name"><h3>工具资源</h3><div class="en">TOOLS</div></div><div class="ly-content"><div class="item"><span class="name">企业大脑：</span><span class="detail">只服务四个 P0 材料，不让工具打磨替代客户验证。</span></div></div><div class="ly-tags"><span class="ly-tag cross">BRAIN</span></div></div>
+  </div>
+
+  <div class="bayes r">
+    <div class="bayes-tier"><div class="grade">C</div><div class="lvl">认可</div><p>客户觉得逻辑清楚。</p></div>
+    <div class="bayes-tier"><div class="grade">B</div><div class="lvl">复述</div><p>客户能在党委会或上级汇报中复述这套逻辑。</p></div>
+    <div class="bayes-tier s-tier"><div class="grade">A</div><div class="lvl">付费</div><p>客户愿意为诊断、报告或年度托管单独付费。</p></div>
+    <div class="bayes-tier"><div class="grade">S</div><div class="lvl">复制</div><p>团队和伙伴能在第二城市/第二场景独立交付。</p></div>
+  </div>
+
+  <div class="kpi r">
+    <div class="kpi-card"><div class="kpi-num">7D</div><div class="kpi-label">3 个客户测试新话术</div></div>
+    <div class="kpi-card"><div class="kpi-num">14D</div><div class="kpi-label">1 次团队独立调研</div></div>
+    <div class="kpi-card"><div class="kpi-num">30D</div><div class="kpi-label">1 个付费/订阅意向</div></div>
+    <div class="kpi-card"><div class="kpi-num">90D</div><div class="kpi-label">1–2 个标杆案例</div></div>
+  </div>
+  <p class="kpi-note">模式升维的验收标准：不是做了多少材料，而是后链路是否能摆脱个人依赖，财链路是否出现持续收入，前链路是否因此自然放大。</p>
+</section>
+
+<div class="sep">· · · · ·</div>
+
+<div class="gh g4 r" id="gate4">
+  <div class="gh-num">GATE 04</div>
+  <h2>壁垒锁定</h2>
+  <div class="gh-rule"></div>
+  <p>我怎么守：四维护城，把先发判断变成长期控制点</p>
+</div>
+
+<section>
+  <div class="four-dim r">
+    <div class="dim-card"><div class="glyph">虚</div><div class="desc">品牌溢价、品类独占、文化共识：让“安全价值证明”成为默认命名。</div><div class="score">3 → 7</div></div>
+    <div class="dim-card"><div class="glyph">实</div><div class="desc">知识资产、诊断清单、指标库、案例库：把个人判断变成可复用资产。</div><div class="score">3.5 → 7</div></div>
+    <div class="dim-card"><div class="glyph">出</div><div class="desc">学习成本、数据引力、沉没成本：让客户离开就失去连续价值账本。</div><div class="score bold">5 → 8</div></div>
+    <div class="dim-card"><div class="glyph">入</div><div class="desc">生态依赖、伙伴交付、平台入口：让新进入者难以同时拿到人、场景和信任。</div><div class="score">3 → 6</div></div>
+  </div>
+
+  <div class="dirtable r">
+    <div class="dirrow h"><div>维度</div><div>现在的风险</div><div>下一步锁定动作</div></div>
+    <div class="dirrow"><div class="dim">虚 V</div><div class="v7">表达很强，但还容易被看成“瑞芳个人厉害”。</div><div class="v8"><strong>命名：</strong>统一使用“安全价值证明”，在白皮书、文章、演讲、汇报中重复出现。</div></div>
+    <div class="dirrow"><div class="dim">实 R</div><div class="v7">方法论还在脑子和 AI 工具里，资产化不足。</div><div class="v8"><strong>沉淀：</strong>建设诊断清单、指标库、案例库、解决方案库和证据链清单。</div></div>
+    <div class="dirrow"><div class="dim">出 O</div><div class="v7">客户拿到单次报告后可能断联，转换成本低。</div><div class="v8"><strong>续约：</strong>用年度安全价值账本、季度复盘和组织共同语言制造连续性。</div></div>
+    <div class="dirrow"><div class="dim">入 I</div><div class="v7">依赖熟人渠道，外部伙伴还没有非合作不可。</div><div class="v8"><strong>嵌入：</strong>把方法论嵌进辰安生态、技术伙伴交付流程和主官汇报入口。</div></div>
+  </div>
+
+  <p class="ctrl-section-label">VIRTUAL CONTROL POINTS</p>
+  <div class="acc-item highlight r open" onclick="this.classList.toggle('open')"><div class="acc-head"><div class="acc-code virtual">V1</div><h5>品类命名权 <span class="score">HIGH</span><span class="star">★</span></h5><span class="acc-toggle">▼</span></div><div class="acc-body"><p><em>安全价值证明</em>必须成为所有材料的统一标题级概念。不要让它退化为“写材料”“AI 咨询”或“信息化方案”。</p></div></div>
+  <div class="acc-item r" onclick="this.classList.toggle('open')"><div class="acc-head"><div class="acc-code virtual">V2</div><h5>用户心理账户 <span class="score">HIGH</span></h5><span class="acc-toggle">▼</span></div><div class="acc-body"><p>从 IT 预算账户，切换到“避免事故、避免问责、证明管理能力”的决策安全感账户。</p></div></div>
+  <div class="acc-item r" onclick="this.classList.toggle('open')"><div class="acc-head"><div class="acc-code virtual">V3</div><h5>方法论署名权 <span class="score">MID</span></h5><span class="acc-toggle">▼</span></div><div class="acc-body"><p>每一份对外材料都回到需求诊断、风险本体、价值量化、闭环复盘四个方法资产。</p></div></div>
+  <div class="acc-item r" onclick="this.classList.toggle('open')"><div class="acc-head"><div class="acc-code virtual">V4</div><h5>第一作品解释权 <span class="score">HIGH</span></h5><span class="acc-toggle">▼</span></div><div class="acc-body"><p>天津不是普通案例，而是安全价值证明的第一作品；解释权决定后续复制时谁被视为源头。</p></div></div>
+
+  <p class="ctrl-section-label implants">REAL CONTROL POINTS</p>
+  <div class="acc-item highlight r" onclick="this.classList.toggle('open')"><div class="acc-head"><div class="acc-code implants">R1</div><h5>需求诊断清单 <span class="score">HIGH</span><span class="star">★</span></h5><span class="acc-toggle">▼</span></div><div class="acc-body"><p>把“痛点把握”拆成标准问题，让团队成员能完成 80% 质量的真实客户调研。</p></div></div>
+  <div class="acc-item r" onclick="this.classList.toggle('open')"><div class="acc-head"><div class="acc-code implants">R2</div><h5>指标库与模板库 <span class="score">HIGH</span></h5><span class="acc-toggle">▼</span></div><div class="acc-body"><p>风险下降、响应提速、监管覆盖、隐患闭环、组织协同，都要从表达变成字段、模板和报告模块。</p></div></div>
+  <div class="acc-item r" onclick="this.classList.toggle('open')"><div class="acc-head"><div class="acc-code implants">R3</div><h5>场景解决方案库 <span class="score">MID</span></h5><span class="acc-toggle">▼</span></div><div class="acc-body"><p>先沉淀防汛、危化、单场所三类高频场景，再扩展到医院、园区和重点企业。</p></div></div>
+  <div class="acc-item r" onclick="this.classList.toggle('open')"><div class="acc-head"><div class="acc-code implants">R4</div><h5>证据链清单 <span class="score">HIGH</span></h5><span class="acc-toggle">▼</span></div><div class="acc-body"><p>每个判断都能回到原始材料、客户反馈、会议纪要、平台能力和项目事实。</p></div></div>
+
+  <p class="ctrl-section-label entry">ENTRY CONTROL POINTS</p>
+  <div class="acc-item r" onclick="this.classList.toggle('open')"><div class="acc-head"><div class="acc-code entry">I1</div><h5>辰安生态入口 <span class="score">MID</span></h5><span class="acc-toggle">▼</span></div><div class="acc-body"><p>先成为厂商生态里“价值证明”的不可替代模块，再向外部客户扩散。</p></div></div>
+  <div class="acc-item r" onclick="this.classList.toggle('open')"><div class="acc-head"><div class="acc-code entry">I2</div><h5>战略伙伴入口 <span class="score">MID</span></h5><span class="acc-toggle">▼</span></div><div class="acc-body"><p>让技术团队不是偶尔帮忙，而是绑定诊断清单、方案库和利润分成。</p></div></div>
+  <div class="acc-item r" onclick="this.classList.toggle('open')"><div class="acc-head"><div class="acc-code entry">I3</div><h5>主官汇报入口 <span class="score">HIGH</span></h5><span class="acc-toggle">▼</span></div><div class="acc-body"><p>凡是需要向上说明投入价值、样板价值、AI 价值的时刻，都是入口。</p></div></div>
+  <div class="acc-item r" onclick="this.classList.toggle('open')"><div class="acc-head"><div class="acc-code entry">I4</div><h5>真实关系入口 <span class="score">HIGH</span></h5><span class="acc-toggle">▼</span></div><div class="acc-body"><p>不要跟工具离得太近，要和人走得更近：客户处境、团队能力和伙伴利益才是长期壁垒。</p></div></div>
+
+  <p class="ctrl-section-label exit">EXIT CONTROL POINTS</p>
+  <div class="acc-item highlight r" onclick="this.classList.toggle('open')"><div class="acc-head"><div class="acc-code exit">O1</div><h5>年度安全价值账本 <span class="score">HIGH</span><span class="star">★</span></h5><span class="acc-toggle">▼</span></div><div class="acc-body"><p>从一次报告变成全年滚动账本，客户离开后会失去连续解释体系。</p></div></div>
+  <div class="acc-item r" onclick="this.classList.toggle('open')"><div class="acc-head"><div class="acc-code exit">O2</div><h5>季度复盘机制 <span class="score">MID</span></h5><span class="acc-toggle">▼</span></div><div class="acc-body"><p>每季度更新指标、故事、风险闭环和 AI 应用成效，形成续约理由。</p></div></div>
+  <div class="acc-item r" onclick="this.classList.toggle('open')"><div class="acc-head"><div class="acc-code exit">O3</div><h5>数据与案例引力 <span class="score">MID</span></h5><span class="acc-toggle">▼</span></div><div class="acc-body"><p>客户每年复盘的数据越多，离开后的重建成本越高。</p></div></div>
+  <div class="acc-item r" onclick="this.classList.toggle('open')"><div class="acc-head"><div class="acc-code exit">O4</div><h5>方法论认证 <span class="score">FUTURE</span></h5><span class="acc-toggle">▼</span></div><div class="acc-body"><p>当样板足够多后，把交付能力变成训练营、认证和伙伴体系。</p></div></div>
+
+  <div class="scorecard r">
+    <div class="scorecard-title">BARRIER SCORECARD · TARGET 18M</div>
+    <div class="scorecard-grid">
+      <svg viewBox="0 0 260 220" width="100%" height="220" role="img" aria-label="四维护城雷达图">
+        <polygon points="130,20 230,110 130,200 30,110" fill="rgba(107,91,149,.05)" stroke="rgba(107,91,149,.18)"/>
+        <polygon points="130,45 202,110 130,174 58,110" fill="rgba(107,91,149,.08)" stroke="rgba(107,91,149,.25)"/>
+        <polygon points="130,70 174,110 130,148 86,110" fill="none" stroke="rgba(107,91,149,.2)"/>
+        <polygon points="130,45 195,110 130,56 50,110" fill="rgba(192,57,43,.18)" stroke="#C0392B" stroke-width="2"/>
+        <text x="130" y="14" text-anchor="middle" font-size="11" fill="#6B5B95">虚 7</text><text x="242" y="114" text-anchor="start" font-size="11" fill="#4A7C59">实 7</text><text x="130" y="215" text-anchor="middle" font-size="11" fill="#2E5984">入 6</text><text x="18" y="114" text-anchor="end" font-size="11" fill="#C0392B">出 8</text>
+      </svg>
+      <div class="scorecard-bars">
+        <div><div class="sb-row"><span class="sb-name virtual">虚拟壁垒</span><span class="sb-num virtual">7/10</span></div><div class="sb-bar"><div class="sb-fill virtual" style="width:70%"></div></div><div class="sb-detail">靠命名权和样板解释权建立。</div></div>
+        <div><div class="sb-row"><span class="sb-name implants">实体壁垒</span><span class="sb-num implants">7/10</span></div><div class="sb-bar"><div class="sb-fill implants" style="width:70%"></div></div><div class="sb-detail">靠诊断清单、指标库、模板库、案例库建立。</div></div>
+        <div><div class="sb-row"><span class="sb-name entry">进入壁垒</span><span class="sb-num entry">6/10</span></div><div class="sb-bar"><div class="sb-fill entry" style="width:60%"></div></div><div class="sb-detail">靠平台生态、伙伴产能和主官汇报入口建立。</div></div>
+        <div><div class="sb-row"><span class="sb-name exit">退出壁垒</span><span class="sb-num exit">8/10</span></div><div class="sb-bar"><div class="sb-fill exit" style="width:80%"></div></div><div class="sb-detail">靠年度价值账本和持续复盘建立。</div></div>
+      </div>
+    </div>
+    <div class="total-score">18 个月目标：综合壁垒达到 <em>7/10</em>，足够支撑品类先发、年度托管和伙伴复制。</div>
+  </div>
+  <div class="qb r">
+    <p>“不要跟工具离得太近，要和人走得更近。”</p>
+    <cite>— 超级壁垒模块对 V2 的修正</cite>
+  </div>
+</section>
+
+<section class="closing" id="closing">
+  <div class="closing-eyebrow r">CLOSING · 远方</div>
+  <h2 class="r">天津是作品，<em>系统化才是通关</em></h2>
+  <p class="closing-deck r d1">创业不是从离职那天开始，而是从瑞芳把“只有我能做”拆成别人也能复用的系统那天开始。接下来的动作，不是多做几个材料，而是让所有材料都服务同一个闭环：客户付费、团队可交付、组织愿绑定。</p>
+
+  <div class="closing-pair r">
+    <div class="closing-side"><div class="label">攻 · 创富</div><h4>前三关先跑通现金流</h4><ul><li>用天津样板打开需求</li><li>用合规风险托管测试付费</li><li>用诊断清单降低个人依赖</li></ul></div>
+    <div class="closing-side"><div class="label">守 · 守富</div><h4>第四关再锁定长期壁垒</h4><ul><li>把表达沉淀为命名权</li><li>把项目沉淀为年度价值账本</li><li>把关系沉淀为伙伴和组织结构</li></ul></div>
+  </div>
+
+  <div class="vision-paint r">
+    <div class="label">18 MONTH VISION</div>
+    <p><strong>2026：</strong>天津成为第一作品，完成诊断清单、价值账本和年度托管的第一轮验证。</p>
+    <p><strong>2027：</strong>安全价值证明进入第二城市/第二厂商/第二场景，证明团队和伙伴也能交付。</p>
+    <p><strong>2028：</strong>方法论从个人交付升级为产品、课程、认证和伙伴网络，瑞芳从“会做的人”变成“定义标准的人”。</p>
+  </div>
+
+  <p class="closing-tail r">每天只问五个问题：是否服务天津样板？是否强化安全价值证明？是否沉淀瑞芳方法论？是否帮助辰安/投资方看见可复制价值？是否推动下一次真实对话？少于三个“是”，今天不做。</p>
+  <div class="closing-final r">创业通关，不是把自己推向更忙，而是把自己的原力装进一个别人也能用、客户愿意付费、组织愿意绑定的系统。</div>
+</section>
+
+<footer>
+  <span class="accent">YUANLI NARRATIVE STRATEGY MAP</span><span class="dot">·</span>RUIFANG SAFETY VALUE PROOF<span class="dot">·</span>GENERATED 2026-06-01
+  <div class="colophon-note">信源：D:/yl-os/3业务输出 的企业大脑读取材料、战略洞察报告、创业通关地图、全模块诊断附件（非对称优势、非理性痴迷、用户心理地图、价值聚焦、假设验证、模式升级、超级壁垒），以及 yuanli-narrative-strategy-map 仓库 V8 模板。敏感边界：涉及具体城市、金额、项目身份和机构信息时，优先采用 T 市、样板窗口、平台生态等脱敏表达。</div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('v');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.r').forEach(el => observer.observe(el));
+</script>
+</body></html>

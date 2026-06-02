@@ -1,0 +1,177 @@
+{
+  "generated_at": "2026-05-17T06:02:00+08:00",
+  "dashboard": "应急平台 OPC 战略工作台",
+  "theme_layer": [
+    {
+      "id": "ontology",
+      "name": "本体底座",
+      "icon": "ontology",
+      "status": "building",
+      "theme_tag": "zhongtai",
+      "score": 72,
+      "task_count": 6,
+      "contract": "对象、关系、动作、时空四要素先成型，后续层级才可推理。"
+    },
+    {
+      "id": "monitoring",
+      "name": "风险感知",
+      "icon": "monitoring",
+      "status": "live",
+      "theme_tag": "liuliang",
+      "score": 68,
+      "task_count": 5,
+      "contract": "多源数据必须绑定本体对象，避免只做传感器堆叠。"
+    },
+    {
+      "id": "judgement",
+      "name": "级联研判",
+      "icon": "judgement",
+      "status": "building",
+      "theme_tag": "zhiku",
+      "score": 61,
+      "task_count": 7,
+      "contract": "优先打穿 3-5 条高价值级联路径，形成可解释输出。"
+    },
+    {
+      "id": "prevention",
+      "name": "主动预防",
+      "icon": "prevention",
+      "status": "planning",
+      "theme_tag": "quant",
+      "score": 58,
+      "task_count": 4,
+      "contract": "研判结果必须转成检查、前置、加强、重大活动保障动作。"
+    },
+    {
+      "id": "response",
+      "name": "事件激活",
+      "icon": "response",
+      "status": "building",
+      "theme_tag": "macro",
+      "score": 65,
+      "task_count": 4,
+      "contract": "L5 不是从零响应，而是激活 L1-L4 已有部署。"
+    },
+    {
+      "id": "replication",
+      "name": "跨城平移",
+      "icon": "replication",
+      "status": "idle",
+      "theme_tag": "chuangye",
+      "score": 49,
+      "task_count": 3,
+      "contract": "通用层与地方层分离，沉淀可复制咨询资产。"
+    }
+  ],
+  "task_layer": {
+    "status_distribution": {
+      "planning": 5,
+      "in_progress": 11,
+      "blocked": 2,
+      "done": 8
+    },
+    "active_pipeline": [
+      {
+        "id": "risk-atom-contract",
+        "title": "风险点原子层契约",
+        "theme": "ontology",
+        "priority": "P0",
+        "status": "in-progress",
+        "pre_task": "确认风险点颗粒度边界：高层→楼层→玻璃幕墙→广告牌",
+        "artifact": "L1 风险点建模模板"
+      },
+      {
+        "id": "cascade-demo",
+        "title": "级联推演样板",
+        "theme": "judgement",
+        "priority": "P0",
+        "status": "in-progress",
+        "pre_task": "先选一条可讲清楚的暴雨→内涝→危化路径",
+        "artifact": "态势图 + 时间轴 + 解释链"
+      },
+      {
+        "id": "decision-archive",
+        "title": "决策档案制度",
+        "theme": "judgement",
+        "priority": "P1",
+        "status": "planning",
+        "pre_task": "定义 AI 建议、数据来源、规则命中、最终决策字段",
+        "artifact": "可解释输出标准"
+      },
+      {
+        "id": "event-activation",
+        "title": "事件即激活机制",
+        "theme": "response",
+        "priority": "P0",
+        "status": "in-progress",
+        "pre_task": "把 L4 部署动作映射到 L5 触发按钮",
+        "artifact": "事件激活流程图"
+      }
+    ]
+  },
+  "brain_layer": [
+    {
+      "id": "strategy",
+      "name": "战略脑",
+      "role": "定义范式、客户叙事、汇报口径",
+      "load": 76,
+      "output": "白皮书、3分钟讲清楚、主官话术"
+    },
+    {
+      "id": "solution",
+      "name": "方案脑",
+      "role": "拆架构、写交付、对齐建设路径",
+      "load": 64,
+      "output": "L1-L5 能力包、接口规范、验收清单"
+    },
+    {
+      "id": "execution",
+      "name": "执行脑",
+      "role": "生成图表、驾驶舱、样板与文档",
+      "load": 58,
+      "output": "HTML 驾驶舱、SVG、Markdown/PDF"
+    }
+  ],
+  "cost_layer": {
+    "weekly_cost": [42, 48, 51, 63, 59, 72, 78, 74],
+    "backflow_7d": [3, 4, 3, 5, 7, 6, 8],
+    "risk": "当前成本集中在 L3 旗舰模组，建议用样板路径换取更高汇报回流。"
+  },
+  "zoom_panels": [
+    {
+      "id": "hot-topics",
+      "name": "热门话题",
+      "theme": "macro",
+      "items": ["本体化应急", "韧性城市", "人工智能+行动", "数据要素×应急管理"]
+    },
+    {
+      "id": "talents",
+      "name": "才艺",
+      "theme": "chuangye",
+      "items": ["3分钟讲清楚", "架构图可视化", "客户共创模型", "跨城复制包装"]
+    },
+    {
+      "id": "skill-raiders",
+      "name": "技能强盗",
+      "theme": "zhiku",
+      "items": ["级联推演", "决策可解释", "回写本体", "Cron+Hook 自动刷新"]
+    }
+  ],
+  "pipeline": [
+    "tasks/*.md",
+    "opc_aggregator.py",
+    "dashboards/opc-data/latest.json",
+    "opc-strategic-dashboard.html / Markdown mirror"
+  ],
+  "automation": {
+    "cron": "每日刷新 latest.json 与快照",
+    "hooks": "任务变更后触发增量聚合",
+    "guardrail": "聚合器只读 tasks，不写任务文件；失败时保留上一版 latest.json。"
+  },
+  "registry_roadmap": [
+    "登记所有面板 id、数据源、负责人、刷新频率",
+    "把静态演示数据切换为 JSON 驱动",
+    "加入 Markdown 镜像输出，便于汇报复制",
+    "接入 Cron + Hook，形成自动刷新战略工作台"
+  ]
+}

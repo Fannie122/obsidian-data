@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>rendering</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      width: 1080px;
+      min-height: 1425px;
+      overflow: hidden;
+      background: #f4efe3;
+    }
+
+    canvas {
+      display: block;
+      width: 1080px;
+      height: 1425px;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="art" width="1080" height="1425"></canvas>
+  <script>
+    const canvas = document.getElementById('art');
+    const ctx = canvas.getContext('2d');
+    const W = canvas.width;
+    const H = canvas.height;
+
+    const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+    const smooth = (value) => value * value * (3 - 2 * value);
+
+    function loadImage(src) {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => resolve(img);
+        img.onerror = reject;
+        img.src = src;
+      });
+    }
+
+    function makeLineArt(img) {
+      const crop = {
+        sx: 96,
+        sy: 68,
+        sw: Math.min(1720, img.width - 210),
+        sh: Math.min(1108, img.height - 195),
+      };
+
+      const source = document.createElement('canvas');
+      source.width = crop.sw;
+      source.height = crop.sh;
+      const sctx = source.getContext('2d');
+      sctx.drawImage(img, crop.sx, crop.sy, crop.sw, crop.sh, 0, 0, crop.sw, crop.sh);
+
+      const imageData = sctx.getImageData(0, 0, source.width, source.height);
+      const data = imageData.data;
+      for (let i = 0; i < data.length; i += 4) {
+        const r = data[i];
+        const g = data[i + 1];
+        const b = data[i + 2];
+        const gray = 0.299 * r + 0.587 * g + 0.114 * b;
+        const line = Math.pow(clamp((236 - gray) / 148, 0, 1), 1.16);
+        const paperShade = clamp((gray - 170) / 80, 0, 1);
+        const paper = [
+          244 + 7 * paperShade,
+          233 + 9 * paperShade,
+          211 + 9 * paperShade,
+        ];
+        data[i] = Math.round(paper[0] * (1 - line) + 25 * line);
+        data[i + 1] = Math.round(paper[1] * (1 - line) + 23 * line);
+        data[i + 2] = Math.round(paper[2] * (1 - line) + 21 * line);
+        data[i + 3] = 255;
+      }
+      sctx.putImageData(imageData, 0, 0);
+      return source;
+    }
+
+    function drawTriangle(source, sx0, sy0, sx1, sy1, sx2, sy2, dx0, dy0, dx1, dy1, dx2, dy2) {
+      const denom = sx0 * (sy1 - sy2) + sx1 * (sy2 - sy0) + sx2 * (sy0 - sy1);
+      if (Math.abs(denom) < 0.01) return;
+
+      const a = (dx0 * (sy1 - sy2) + dx1 * (sy2 - sy0) + dx2 * (sy0 - sy1)) / denom;
+      const b = (dy0 * (sy1 - sy2) + dy1 * (sy2 - sy0) + dy2 * (sy0 - sy1)) / denom;
+      const c = (dx0 * (sx2 - sx1) + dx1 * (sx0 - sx2) + dx2 * (sx1 - sx0)) / denom;
+      const d = (dy0 * (sx2 - sx1) + dy1 * (sx0 - sx2) + dy2 * (sx1 - sx0)) / denom;
+      const e = (
+        dx0 * (sx1 * sy2 - sx2 * sy1) +
+        dx1 * (sx2 * sy0 - sx0 * sy2) +
+        dx2 * (sx0 * sy1 - sx1 * sy0)
+      ) / denom;
+      const f = (
+        dy0 * (sx1 * sy2 - sx2 * sy1) +
+        dy1 * (sx2 * sy0 - sx0 * sy2) +
+        dy2 * (sx0 * sy1 - sx1 * sy0)
+      ) / denom;
+
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(dx0, dy0);
+      ctx.lineTo(dx1, dy1);
+      ctx.lineTo(dx2, dy2);
+      ctx.closePath();
+      ctx.clip();
+      ctx.setTransform(a, b, c, d, e, f);
+      ctx.drawImage(source, 0, 0);
+      ctx.restore();
+    }
+
+    function drawWarped(source) {
+      const sw = source.width;
+      const sh = source.height;
+      const cols = 34;
+      const rows = 26;
+
+      function map(u, v) {
+        const topVPx = W * 0.52;
+        const baseCX = W * 0.50;
+        const topY = 52;
+        const baseY = H * 0.935;
+        const t = Math.pow(v, 0.93);
+        const centerX = topVPx * (1 - t) + baseCX * t;
+        const scale = 0.43 + 1.06 * Math.pow(v, 1.05);
+        const canyonPush = Math.pow(Math.abs(u - 0.5) * 2, 1.5);
+        const horizontalLean = (u - 0.5) * (1 - v) * 72;
+        const x = centerX + (u - 0.5) * W * 0.79 * scale + horizontalLean;
+        const y = topY + t * (baseY - topY) + canyonPush * (52 + 86 * v);
+        return { x, y };
+      }
+
+      ctx.save();
+      ctx.shadowColor = 'rgba(74, 58, 31, 0.23)';
+      ctx.shadowBlur = 36;
+      ctx.shadowOffsetY = 24;
+      ctx.beginPath();
+      const p0 = map(0, 0);
+      ctx.moveTo(p0.x, p0.y);
+      for (let i = 1; i <= 80; i += 1) {
+        const p = map(i / 80, 0);
+        ctx.lineTo(p.x, p.y);
+      }
+      for (let i = 1; i <= 80; i += 1) {
+        const p = map(1, i / 80);
+        ctx.lineTo(p.x, p.y);
+      }
+      for (let i = 79; i >= 0; i -= 1) {
+        const p = map(i / 80, 1);
+        ctx.lineTo(p.x, p.y);
+      }
+      for (let i = 79; i >= 0; i -= 1) {
+        const p = map(0, i / 80);
+        ctx.lineTo(p.x, p.y);
+      }
+      ctx.closePath();
+      ctx.fillStyle = '#eadcc0';
+      ctx.fill();
+      ctx.restore();
+
+      ctx.save();
+      ctx.globalCompositeOperation = 'multiply';
+      for (let row = 0; row < rows; row += 1) {
+        for (let col = 0; col < cols; col += 1) {
+          const u0 = col / cols;
+          const u1 = (col + 1) / cols;
+          const v0 = row / rows;
+          const v1 = (row + 1) / rows;
+          const s00 = { x: u0 * sw, y: v0 * sh };
+          const s10 = { x: u1 * sw, y: v0 * sh };
+          const s01 = { x: u0 * sw, y: v1 * sh };
+          const s11 = { x: u1 * sw, y: v1 * sh };
+          const d00 = map(u0, v0);
+          const d10 = map(u1, v0);
+          const d01 = map(u0, v1);
+          const d11 = map(u1, v1);
+          drawTriangle(source, s00.x, s00.y, s10.x, s10.y, s11.x, s11.y, d00.x, d00.y, d10.x, d10.y, d11.x, d11.y);
+          drawTriangle(source, s00.x, s00.y, s11.x, s11.y, s01.x, s01.y, d00.x, d00.y, d11.x, d11.y, d01.x, d01.y);
+        }
+      }
+      ctx.restore();
+
+      ctx.save();
+      ctx.globalAlpha = 0.09;
+      ctx.lineWidth = 2.5;
+      ctx.strokeStyle = '#3178b8';
+      const topVP = { x: W * 0.52, y: -280 };
+      for (let i = 0; i <= 12; i += 1) {
+        const x = 30 + i * 115;
+        ctx.beginPath();
+        ctx.moveTo(x, H * 0.94);
+        ctx.lineTo(topVP.x, topVP.y);
+        ctx.stroke();
+      }
+      ctx.globalAlpha = 0.075;
+      ctx.strokeStyle = '#ad6f49';
+      const leftVP = { x: -760, y: 1110 };
+      const rightVP = { x: W + 760, y: 1040 };
+      for (let i = 0; i < 9; i += 1) {
+        const y = 460 + i * 145;
+        ctx.beginPath();
+        ctx.moveTo(leftVP.x, leftVP.y);
+        ctx.lineTo(W * 0.52, y);
+        ctx.lineTo(rightVP.x, rightVP.y);
+        ctx.stroke();
+      }
+      ctx.restore();
+    }
+
+    function drawBackground() {
+      const sky = ctx.createLinearGradient(0, 0, 0, H);
+      sky.addColorStop(0, '#dcebf3');
+      sky.addColorStop(0.42, '#f2ead8');
+      sky.addColorStop(1, '#ead8bc');
+      ctx.fillStyle = sky;
+      ctx.fillRect(0, 0, W, H);
+
+      ctx.save();
+      ctx.globalAlpha = 0.22;
+      for (let i = 0; i < 1800; i += 1) {
+        const x = (i * 97) % W;
+        const y = (i * 181) % H;
+        const radius = 0.6 + ((i * 13) % 9) / 10;
+        ctx.beginPath();
+        ctx.arc(x, y, radius, 0, Math.PI * 2);
+        ctx.fillStyle = i % 3 === 0 ? '#fff8e7' : '#ccb88e';
+        ctx.fill();
+      }
+      ctx.restore();
+
+      ctx.save();
+      ctx.globalAlpha = 0.25;
+      const glow = ctx.createRadialGradient(W * 0.52, 160, 60, W * 0.52, 160, 760);
+      glow.addColorStop(0, '#ffffff');
+      glow.addColorStop(1, 'rgba(255,255,255,0)');
+      ctx.fillStyle = glow;
+      ctx.fillRect(0, 0, W, H);
+      ctx.restore();
+    }
+
+    async function render() {
+      drawBackground();
+      const img = await loadImage('son-shanghai-skyscrapers-original.jpg');
+      const lineArt = makeLineArt(img);
+      drawWarped(lineArt);
+
+      ctx.save();
+      ctx.globalAlpha = 0.15;
+      ctx.strokeStyle = '#ffffff';
+      ctx.lineWidth = 7;
+      ctx.beginPath();
+      ctx.moveTo(W * 0.18, H * 0.965);
+      ctx.quadraticCurveTo(W * 0.50, H * 0.89, W * 0.82, H * 0.965);
+      ctx.stroke();
+      ctx.restore();
+
+      const dataUrl = canvas.toDataURL('image/png');
+      const response = await fetch('/save-render', {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain; charset=utf-8' },
+        body: dataUrl,
+      });
+      document.title = response.ok ? 'three-point-saved' : 'render-error';
+    }
+
+    render().catch((error) => {
+      console.error(error);
+      document.title = 'render-error';
+    });
+  </script>
+</body>
+</html>
